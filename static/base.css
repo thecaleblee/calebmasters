@@ -1,16 +1,12 @@
 /** CSS written just to prove to myself I can still do it w/o needing a compiler **/
 
-/** Reset provided gy digitalocean.com & a
-... I'm aware of the irony; I could have written it, but oh man **/
+/** Reset provided by digitalocean.com & other various sources 
+... I'm aware of the irony; I could have written it, but why? **/
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
 }
 
 html {
@@ -52,4 +48,78 @@ ul {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* Styles for layout */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+} 
+
+section {
+  width: 100%;
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+}
+
+.hero > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  display: block;
+}
+
+footer {
+  align-self: center;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Global Styling */
+section {
+  padding: 0 1rem;
+}
+
+section > section {
+  padding: 0;
+}
+
+article + article {
+  margin-top: 1.5rem;
+}
+
+/* Hero */
+.hero {
+  min-height: 30vh;
 }

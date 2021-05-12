@@ -31,8 +31,8 @@
           <li><a href="#portfolio">Portfolio</a></li>
         </ul>
         <ul class="tech">
-          <li>HTML/CSS/JS</li>
-          <li>React/Next.js</li>
+          <li><a href="/" class="active">HTML/CSS/JS</a></li>
+          <li><a href="/react">React/Next.js</a></li>
           <li>???</li>
         </ul>
       </nav>
@@ -44,14 +44,70 @@
           <h1><span>Caleb</span> Masters</h1>
         </hgroup>
         <div>
-          <p>Front-End Engineer.</p>
-          <p>UX Promoter.</p>
-          <p>Hobby Collector.</p>
+          <p>Front-End<br class="hide" /> Engineer.</p>
+          <p>UX<br class="hide" /> Promoter.</p>
+          <p>Hobby<br class="hide" /> Collector.</p>
         </div>
       </section>
       <section id="portfolio">
         <h3>Projects</h3>
         <section>
+          <a href="/bluehost">
+            <article
+              class="bluehost"
+              style="
+                --background: url('https://res.cloudinary.com/calebmastersdev/image/upload/v1620844282/cmdev/bluehost_bc3c2l.jpg');
+                background-size: cover;
+              "
+            >
+              <hgroup>
+                <h4>Bluehost.com</h4>
+                <h5>
+                  React, JS, CSS, Enzyme, Sketch, Invision, Optimizely, Git,
+                  Jira.
+                </h5>
+              </hgroup>
+              <p>
+                Created React components for an in house framework based on
+                Next.js to allow pages to be generated dynamically using
+                Contentful as a CMS.
+              </p>
+            </article>
+          </a>
+          <a href="/hostgator">
+            <article
+              class="hostgator"
+              style="
+                --background: url('https://res.cloudinary.com/calebmastersdev/image/upload/v1620845531/cmdev/hostgator_vzcs0u.jpg');
+                background-size: cover;
+              "
+            >
+              <hgroup>
+                <h4>HostGator.com</h4>
+                <h5>
+                  Mason, Perl, JS, CSS, Jest, Sketch, Invision, Monetate, Git,
+                  Jira.
+                </h5>
+              </hgroup>
+              <p>
+                Created custom components and pages in the Perl based platform
+                Mason, optimized the HTML/CSS of the legacy site, & created new
+                landing pages utilizing an in house content management system.
+              </p>
+            </article>
+          </a>
+          <a href="/story-time">
+            <article class="bluehost">
+              <hgroup>
+                <h4>Bob's StoryTime</h4>
+                <h5>JS, CSS, Express, Heroku, Babel, Git.</h5>
+              </hgroup>
+              <p>
+                Created a planning poker app for Agile Scrum use to help with
+                remote employees ability to participate in scrum ceremonies.
+              </p>
+            </article>
+          </a>
           <a href="/bluehost">
             <article
               class="bluehost"

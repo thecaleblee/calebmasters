@@ -95,8 +95,32 @@ nav ul {
 nav .tech {
   font-size: 1rem;
   color: var(--text-secondary);
+  background: var(--secondary-bg);
   justify-content: space-evenly;
-  padding: .3rem 0;
+  padding: 0.3rem 0;
+}
+
+nav .tech a,
+nav .tech a:active {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+nav .tech a.active {
+  border-bottom: 2px solid var(--heading-main);
+}
+
+nav ul:first-child a {
+  font-family: "Montserrat";
+  color: var(--theme-main);
+}
+
+nav a.active {
+  color: var(--heading-main);
+}
+
+nav a:hover {
+  color: var(--text-main);
 }
 
 section {
@@ -116,6 +140,26 @@ footer p {
 }
 
 /* Typography */
+
+h1 {
+  font-size: 4.5rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 2.8rem;
+}
+
+h4 {
+  font-size: 2.2rem;
+}
+
+h5 {
+  font-size: 1.7rem;
+}
 
 h3,
 h4 {
@@ -143,7 +187,7 @@ article + article {
 
 /* Hero */
 .hero {
-  min-height: 15vh;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -154,7 +198,7 @@ article + article {
 .hero > div {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -166,6 +210,7 @@ article + article {
 }
 
 .hero h1 span {
+  display: block;
   background: -webkit-linear-gradient(
     45deg,
     var(--heading-main),
@@ -176,17 +221,16 @@ article + article {
 }
 
 .hero h2 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   margin-bottom: 2.5rem;
 }
 
 .hero p {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   display: block;
 }
 
 /* Portfolio  */
-
 #portfolio {
   background-color: var(--secondary-bg);
   background-image: linear-gradient(
@@ -257,10 +301,13 @@ article + article {
 
 #portfolio article h4 {
   color: var(--theme-main);
+  margin-bottom: 1rem;
 }
 
 #portfolio article p {
   color: var(--text-secondary);
+  margin-top: 2rem;
+  font-size: 1.5rem;
 }
 
 #portfolio a {
@@ -271,6 +318,7 @@ article + article {
   text-decoration: underline;
 }
 
+/* Footer */
 footer {
   background: var(--text-main);
   color: var(--text-tertiary);
@@ -278,35 +326,152 @@ footer {
   padding-top: 4.5rem;
 }
 
-@media screen and (min-width: 540px) {
+@media screen and (min-width: 415px) {
   #portfolio section {
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
   }
 
-  #portfolio article {
-    flex: 1 1 calc(50% - 2rem);
+  #portfolio h3 {
+    margin-bottom: 2rem;
   }
 
   #portfolio article:first-child {
     margin-top: 0;
   }
 
-  #portfolio article::before {
+  #portfolio article:last-child {
+    margin-bottom: 2rem;
+  }
+
+  #portfolio a {
+    flex: 2 1 calc(50% - 2rem);
+    display: flex;
+  }
+
+  #portfolio a:first-child {
+    margin-top: 0;
+    flex: 1 100%;
+  }
+
+  #portfolio a:last-child {
+    align-self: stretch;
+    justify-self: stretch;
+  }
+  #portfolio a::before {
     height: 12rem;
     background: no-repeat center center var(--background);
   }
+
+  #portfolio article {
+    align-self: stretch;
+  }
 }
 
-@media screen and (min-width: 929px) {
+@media screen and (min-width: 567px) {
+.hero h1 {
+    font-size: 6.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.75rem;
+  }
+
+  .hero p {
+    font-size: 1.85rem;
+  }
+
+  nav {
+    flex-direction: column-reverse;
+    padding-top: 0;
+  }
+
+  nav .tech {
+    margin-bottom: 1rem;
+    justify-content: flex-end;
+  }
+
+  nav .tech a {
+    margin-right: 2rem;
+  }
+
+  #portfolio a:first-child {
+    margin-top: 0;
+    flex: 1 calc(50% - 1rem);
+  }
+}
+
+@media screen and (min-width: 905px) {
+  .hide {
+    display: none;
+  }
+
+  nav img {
+    justify-self: flex-start;
+  }
+
+  .hero {
+    min-height: 70vh;
+    justify-content: space-evenly;
+  }
+
+  .hero > div {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .hero h1 {
+    font-size: 9rem;
+  }
+
+  .hero h1 span {
+    display: inline;;
+  }
+
+  .hero h2 {
+    font-size: 1.9rem;
+  }
+
+  .hero p {
+    font-size: 2.4rem;
+    max-width: unset;
+  }
+
+  #portfolio::before {
+    top: -5.3rem;
+    height: 5.7rem;
+  }
+  #portfolio::after {
+    bottom: -5.3rem;
+    height: 5.7rem;
+  }
 
   #portfolio section {
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  #portfolio article {
-    flex: 1 1 calc(33% - 2rem);
+  #portfolio a {
+    flex: 1 25%;
+  }
+
+  #portfolio a:first-child,
+  #portfolio a:nth-of-type(2) {
+    flex: 1 50%;
+  }
+}
+
+@media screen and (min-width: 1640px) {
+  #portfolio::before {
+    top: -7.3rem;
+    height: 7.7rem;
+  }
+
+  #portfolio::after {
+    bottom: -7.3rem;
+    height: 7.7rem;
   }
 }

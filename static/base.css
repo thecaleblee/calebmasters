@@ -89,6 +89,7 @@ nav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   margin: 0;
 }
 
@@ -169,6 +170,11 @@ h4 {
 
 h5 {
   color: var(--text-tertiary);
+}
+
+h5 span {
+  color: var(--heading-main);
+  font-size: 1.5rem;
 }
 
 /* Global Styling */
@@ -461,6 +467,14 @@ footer {
   #portfolio a:first-child,
   #portfolio a:nth-of-type(2) {
     flex: 1 50%;
+  }
+
+  #portfolio article {
+    padding-top: 24rem;
+  }
+
+  #portfolio article:before {
+    height: 20rem;
   }
 
   #portfolio article p {

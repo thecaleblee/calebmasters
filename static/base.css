@@ -370,7 +370,7 @@ footer {
 }
 
 @media screen and (min-width: 567px) {
-.hero h1 {
+  .hero h1 {
     font-size: 6.5rem;
   }
 
@@ -412,7 +412,7 @@ footer {
   }
 
   .hero {
-    min-height: 70vh;
+    min-height: 60rem;
     justify-content: space-evenly;
   }
 
@@ -422,13 +422,12 @@ footer {
     margin-right: auto;
   }
 
-
   .hero h1 {
     font-size: 9rem;
   }
 
   .hero h1 span {
-    display: inline;;
+    display: inline;
   }
 
   .hero h2 {
@@ -444,6 +443,7 @@ footer {
     top: -5.3rem;
     height: 5.7rem;
   }
+
   #portfolio::after {
     bottom: -5.3rem;
     height: 5.7rem;
@@ -461,6 +461,10 @@ footer {
   #portfolio a:first-child,
   #portfolio a:nth-of-type(2) {
     flex: 1 50%;
+  }
+
+  #portfolio article p {
+    font-size: 1.7rem;
   }
 }
 

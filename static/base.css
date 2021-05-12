@@ -43,12 +43,13 @@ body {
 
 ol,
 ul {
-  list-style: none;
+  list-style-type: none;
 }
 
 img {
   max-width: 100%;
   height: auto;
+  border: none;
 }
 
 /* Variables */
@@ -70,18 +71,32 @@ body {
   min-height: 100vh;
   height: auto;
   color: var(--text-main);
+  background: #fff;
 }
 
 nav {
   display: flex;
-  flex-direction: row;
+  flex-flow: column wrap;
   justify-content: space-between;
+  padding-top: 1rem;
+}
+
+nav img {
+  max-height: 3rem;
 }
 
 nav ul {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  margin: 0;
+}
+
+nav .tech {
+  font-size: 1rem;
+  color: var(--text-secondary);
   justify-content: space-evenly;
+  padding: .3rem 0;
 }
 
 section {
@@ -248,6 +263,14 @@ article + article {
   color: var(--text-secondary);
 }
 
+#portfolio a {
+  text-decoration: none;
+}
+
+#portfolio a h4 {
+  text-decoration: underline;
+}
+
 footer {
   background: var(--text-main);
   color: var(--text-tertiary);
@@ -268,5 +291,22 @@ footer {
 
   #portfolio article:first-child {
     margin-top: 0;
+  }
+
+  #portfolio article::before {
+    height: 12rem;
+    background: no-repeat center center var(--background);
+  }
+}
+
+@media screen and (min-width: 929px) {
+
+  #portfolio section {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #portfolio article {
+    flex: 1 1 calc(33% - 2rem);
   }
 }

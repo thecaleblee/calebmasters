@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset= ISO-8859-1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -44,20 +45,32 @@
           <li>
             <a href="/" aria-label="Home">
               <img
-                src="https://res.cloudinary.com/calebmastersdev/image/upload/v1620762551/cmdev/cmlogo-t_aavg64.png"
-                alt="Caleb Masters Dev"
-                width="55"
-                height=30"
-              />
+              src="https://res.cloudinary.com/calebmastersdev/image/upload/v1620762551/cmdev/cmlogo-t_aavg64.png"
+              alt="Caleb Masters Dev" width="55" height=30" />
             </a>
           </li>
-          <li><a href="#recent-work" aria-label="Recent Work">Recent Work</a></li>
+          <li>
+            <a href="#recent-work" aria-label="Recent Work">Recent Work</a>
+          </li>
           <li><a href="#skills" aria-label="Skills">Skills</a></li>
           <li><a href="#resume" aria-label="Resume">Resume</a></li>
         </ul>
         <ul class="tech">
-          <li><a href="/" class="active" aria-label="Change Website Tech Stack to: HTML/CSS/JS">HTML/CSS/JS</a></li>
-          <li><a href="/react" aria-label="Change Website Tech Stack to: React/Next.js">React/Next.js</a></li>
+          <li>
+            <a
+              href="/"
+              class="active"
+              aria-label="Change Website Tech Stack to: HTML/CSS/JS"
+              >HTML/CSS/JS</a
+            >
+          </li>
+          <li>
+            <a
+              href="/react"
+              aria-label="Change Website Tech Stack to: React/Next.js"
+              >React/Next.js</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
@@ -83,7 +96,7 @@
         </div>
       </section>
       <section id="recent-work">
-        <section>
+        <div class="container">
           <h2>
             Projects I've<br class="hide" />
             Worked On Recently
@@ -146,63 +159,19 @@
               </p>
             </article>
           </a>
-          <a href="/bluehost" aria-label="Recent Work Example: Bluehost.com">
-            <article
-              class="bluehost"
-              style="
-                --background: url('https://res.cloudinary.com/calebmastersdev/image/upload/v1620844282/cmdev/bluehost_bc3c2l.jpg');
-                background-size: cover;
-              "
-            >
-              <hgroup>
-                <h3>Bluehost.com</h3>
-                <h4>
-                  React, JS, CSS, Enzyme, Sketch, Invision, Optimizely, Git,
-                  Jira.
-                </h4>
-              </hgroup>
-              <p>
-                Created React components for an in house framework based on
-                Next.js to allow pages to be generated dynamically using
-                Contentful as a CMS.
-              </p>
-            </article>
-          </a>
-          <a href="/hostgator" aria-label="Recent Work Example: HostGator.com">
-            <article
-              class="hostgator"
-              style="
-                --background: url('https://res.cloudinary.com/calebmastersdev/image/upload/v1620845531/cmdev/hostgator_vzcs0u.jpg');
-                background-size: cover;
-              "
-            >
-              <hgroup>
-                <h3>HostGator.com</h3>
-                <h4>
-                  Mason, Perl, JS, CSS, Jest, Sketch, Invision, Monetate, Git,
-                  Jira.
-                </h4>
-              </hgroup>
-              <p>
-                Created custom components and pages in the Perl based platform
-                Mason, optimized the HTML/CSS of the legacy site, & created new
-                landing pages utilizing an in house content management system.
-              </p>
-            </article>
-          </a>
-          <a href="/story-time" aria-label="Recent Work Example: Story Time">
-            <article class="bluehost">
-              <hgroup>
-                <h3>Bob's StoryTime</h3>
-                <h4>JS, CSS, Express, Heroku, Babel, Git.</h4>
-              </hgroup>
-              <p>
-                Created a planning poker app for Agile Scrum use to help with
-                remote employees ability to participate in scrum ceremonies.
-              </p>
-            </article>
-          </a>
-        </section>
+        </div>
+      </section>
+      <section id="skills">
+        <div class="container">
+          <h2>Skills</h2>
+          <p>Welp, this is where they would go if I had any.</p>
+        </div>
+      </section>
+      <section id="resume">
+        <div class="container">
+          <h2>Resume</h2>
+          <p>Relevent work information summed up & a link to get the real thing</p>
+        </div>
       </section>
     </main>
     <footer><p>&copy; Caleb Masters 2021</p></footer>

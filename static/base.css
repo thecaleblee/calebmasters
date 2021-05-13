@@ -71,9 +71,10 @@ img {
 /* Variables */
 body {
   --main-bg: #fff;
-  --main-theme: #13a895;
-  --main-text: #292f2d;
+  --main-theme: #3fa99b;
   --main-heading: #0f5b46;
+  --main-subheading: #13a895;
+  --main-text: #292f2d;
   --secondary-bg: #d5ede6;
   --tertiary-bg: #ecf7f2;
   --secondary-text: #434b49;
@@ -82,6 +83,8 @@ body {
   --top-border-url: url("https://res.cloudinary.com/calebmastersdev/image/upload/v1620834063/cmdev/teal-top_pss4on.svg");
   --bottom-border-url: url("https://res.cloudinary.com/calebmastersdev/image/upload/v1620834064/cmdev/teal-bottom_hora7l.svg");
   --alt-main-bg: var(--main-text);
+  --alt-secondary-bg: #334240;
+  --alt-secondary-text: #9fcfc8;
 }
 
 /* Styles for layout */
@@ -91,7 +94,7 @@ body {
   min-height: 100vh;
   height: auto;
   color: var(--main-text);
-  background: #fff;
+  background: var(--main-bg);
 }
 
 nav {
@@ -267,9 +270,11 @@ article + article {
     var(--secondary-bg) 100%
   );
   position: relative;
+  z-index: 3;
 }
 
-#recent-work::before {
+#recent-work::before,
+footer::before {
   content: "";
   position: absolute;
   display: block;
@@ -281,7 +286,8 @@ article + article {
   background-size: cover;
 }
 
-#recent-work::after {
+#recent-work::after, 
+#skills::after {
   content: "";
   position: absolute;
   display: block;
@@ -293,10 +299,19 @@ article + article {
   background-size: cover;
 }
 
+#skills::after {
+  filter: brightness(0) saturate(100%) invert(22%) sepia(7%) saturate(911%) hue-rotate(120deg) brightness(93%) contrast(86%);
+  transform: scalex(-1);
+}
+
+footer::before {
+  filter: brightness(0) saturate(100%) invert(11%) sepia(3%) saturate(2484%) hue-rotate(109deg) brightness(94%) contrast(81%) ;
+}
+
 #recent-work article {
   padding: 12rem 1rem 1rem;
   margin: 0 1rem 2rem;
-  background: #fff;
+  background: var(--main-bg);
   border: 1px solid var(--tertiary-text);
   border-radius: 0.3rem;
   position: relative;
@@ -345,16 +360,50 @@ article + article {
   text-decoration: underline;
 }
 
+/* Skills */
+#skills {
+  position: relative;
+  padding: 5.4rem 0;
+  margin-top: -2.7rem;
+  background-color: var(--alt-secondary-bg);
+  color: var(--alt-secondary-text);
+  z-index: 2;
+}
+
+#skills .container,
+#resume .container {
+  flex-direction: column;
+  text-align: center;
+}
+
+#skills h2 {
+  color: var(--main-theme);
+}
+
+#resume {
+  position: relative;
+  padding: 5.4rem 0;
+  margin-top: -2.7rem;
+  background-color: var(--main-bg);
+  color: var(--main-heading);
+  z-index: 1;
+}
+
+#resume h2 {
+  color: var(--main-subheading);
+}
+
 /* Footer */
 footer {
+  position: relative;
   background: var(--main-text);
   color: var(--tertiary-text);
-  margin-top: -2.5rem;
-  padding-top: 4.5rem;
+  padding-top: 2rem;
+  z-index: 1;
 }
 
 @media screen and (min-width: 415px) {
-  #recent-work section {
+  .container {
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
@@ -431,6 +480,14 @@ footer {
   #recent-work .hide {
     display: none;
   }
+
+  #skills {
+    padding: 9rem 0;
+  }
+
+  #resume {
+
+  }
 }
 
 @media screen and (min-width: 784px) {
@@ -445,6 +502,11 @@ footer {
   #recent-work h2 + a,
   #recent-work a {
     flex: 1 calc(33% - 1rem);
+  }
+
+  #skills {
+    padding: 12rem 0;
+    margin-top: -4rem;
   }
 }
 
@@ -490,6 +552,11 @@ footer {
     padding: 6rem 0;
   }
 
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
   #recent-work h2 {
     margin-bottom: 5rem;
   }
@@ -502,11 +569,6 @@ footer {
   #recent-work::after {
     bottom: -5.3rem;
     height: 5.7rem;
-  }
-
-  #recent-work section {
-    max-width: 1200px;
-    margin: 0 auto;
   }
 
   #recent-work h2 + a,
@@ -524,6 +586,29 @@ footer {
 
   #recent-work article p {
     font-size: 1.7rem;
+  }
+
+  #skills {
+    padding: 16.6rem 0 8rem;
+    margin-top: -5.3rem;
+  }
+
+  #skills::after {
+    bottom: -5.3rem;
+    height: 5.7rem;
+  }
+
+  #resume {
+    padding: 16rem 0 8rem;
+  }
+
+  footer::before {
+    top: -5.3rem;
+    height: 5.7rem;
+  }
+
+  footer {
+    padding: 6rem 0;
   }
 }
 
@@ -561,5 +646,28 @@ footer {
   #recent-work::after {
     bottom: -7.3rem;
     height: 7.7rem;
+  }
+
+  #skills {
+    padding: 21.4rem 0;
+    margin-top: -7.7rem;
+  }
+
+  #skills::after {
+    bottom: -7.3rem;
+    height: 7.7rem;
+  }
+
+  #resume {
+    padding: 18rem 0 10rem;
+  }
+
+  footer::before {
+    top: -7.3rem;
+    height: 7.7rem;
+  }
+
+  footer {
+    padding: 8rem 0;
   }
 }

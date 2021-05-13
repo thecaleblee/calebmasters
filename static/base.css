@@ -1,0 +1,550 @@
+/** CSS written just to prove to myself I can still do it w/o needing a compiler **/
+
+/** Reset provided by digitalocean.com & other various sources 
+... I'm aware of the irony; I could have written it, but why? **/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-weight: normal;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  font-size: 17px;
+  font-size: 1.7rem;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+ol,
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+
+/* Variables */
+body {
+  --theme-main: #13a895;
+  --text-main: #292f2d;
+  --heading-main: #0f5b46;
+  --secondary-bg: #d5ede6;
+  --tertiary-bg: #ecf7f2;
+  --text-secondary: #434b49;
+  --text-tertiary: #7a928c;
+  --top-border-url: url("https://res.cloudinary.com/calebmastersdev/image/upload/v1620834063/cmdev/teal-top_pss4on.svg");
+  --bottom-border-url: url("https://res.cloudinary.com/calebmastersdev/image/upload/v1620834064/cmdev/teal-bottom_hora7l.svg");
+}
+
+/* Styles for layout */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: auto;
+  color: var(--text-main);
+  background: #fff;
+}
+
+nav {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+nav img {
+  max-height: 3rem;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+}
+
+nav .tech {
+  font-size: 1rem;
+  color: var(--text-tertiary);
+  background: var(--tertiary-bg);
+  justify-content: space-evenly;
+  padding: 0.3rem 0;
+}
+
+nav .tech a,
+nav .tech a:active {
+  color: var(--text-tertiary);
+  text-decoration: none;
+}
+
+nav .tech a.active {
+  border-bottom: 1px dotted var(--text-tertiary);
+  color: var(--heading-main);
+}
+
+nav ul:first-child a {
+  font-family: "Montserrat";
+  color: var(--theme-main);
+}
+
+nav a.active {
+  color: var(--heading-main);
+}
+
+nav a:hover {
+  color: var(--text-main);
+}
+
+section {
+  width: 100%;
+}
+
+footer {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+footer p {
+  align-self: center;
+}
+
+/* Typography */
+
+h1 {
+  font-size: 4.5rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 2.8rem;
+}
+
+h4 {
+  font-size: 2.2rem;
+}
+
+h5 {
+  font-size: 1.7rem;
+}
+
+h3,
+h4 {
+  font-family: "Montserrat";
+  color: var(--heading-main);
+}
+
+h5 {
+  color: var(--text-tertiary);
+}
+
+h5 span {
+  color: var(--heading-main);
+  font-size: 1.5rem;
+}
+
+/* Global Styling */
+section {
+  padding: 2rem 1rem;
+  margin: 0 0 2.5rem 0;
+}
+
+section > section {
+  padding: 0;
+}
+
+article + article {
+  margin-top: 1.5rem;
+}
+
+/* Hero */
+.hero {
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+
+.hero > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.hero h1 {
+  font-family: "Montserrat";
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 2.5rem;
+}
+
+.hero h1 span {
+  display: block;
+  background: -webkit-linear-gradient(
+    45deg,
+    var(--heading-main),
+    var(--theme-main)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero h2 {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 1.6rem;
+  display: block;
+}
+
+/* Portfolio  */
+#portfolio {
+  background-color: var(--secondary-bg);
+  background-image: linear-gradient(
+    0deg,
+    var(--secondary-bg) 0%,
+    var(--secondary-bg) 30%,
+    var(--text-tertiary) 50%,
+    var(--secondary-bg) 80%,
+    var(--secondary-bg) 100%
+  );
+  position: relative;
+}
+
+#portfolio::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: -2.3rem;
+  left: 0;
+  right: 0;
+  height: 2.7rem;
+  background: var(--top-border-url) top center no-repeat;
+  background-size: cover;
+}
+
+#portfolio::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -2.3rem;
+  left: 0;
+  right: 0;
+  height: 2.7rem;
+  background: var(--bottom-border-url) bottom center no-repeat;
+  background-size: cover;
+}
+
+#portfolio article {
+  padding: 12rem 1rem 1rem;
+  margin: 0 1rem 2rem;
+  background: #fff;
+  border: 1px solid var(--text-tertiary);
+  border-radius: 0.3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#portfolio h3 {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+#portfolio:first-child a {
+  margin-top: 2rem;
+  flex-basis: 100%;
+}
+
+#portfolio article::before {
+  border-bottom: 1px solid var(--text-tertiary);
+  position: absolute;
+  top: 0;
+  height: 10rem;
+  left: 0;
+  right: 0;
+  display: block;
+  content: "";
+  background: no-repeat center center var(--background);
+  background-size: cover;
+}
+
+#portfolio article h4 {
+  color: var(--theme-main);
+  margin-bottom: 1rem;
+}
+
+#portfolio article p {
+  color: var(--text-secondary);
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+#portfolio a {
+  text-decoration: none;
+}
+
+#portfolio a h4 {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: var(--text-main);
+  color: var(--text-tertiary);
+  margin-top: -2.5rem;
+  padding-top: 4.5rem;
+}
+
+@media screen and (min-width: 415px) {
+  #portfolio section {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+  }
+
+  #portfolio h3 {
+    margin-bottom: 2rem;
+  }
+
+  #portfolio h3 + a {
+    flex-basis: 100%;
+  }
+
+  #portfolio article:first-child {
+    margin-top: 0;
+  }
+
+  #portfolio a {
+    flex: 2 1 calc(50% - 2rem);
+    display: flex;
+  }
+
+  #portfolio a:first-child {
+    margin-top: 0;
+    flex: 1 100%;
+  }
+
+  #portfolio a::before {
+    height: 12rem;
+    background: no-repeat center center var(--background);
+  }
+
+  #portfolio article {
+    align-self: stretch;
+  }
+}
+
+@media screen and (min-width: 567px) {
+  nav {
+    flex-direction: column-reverse;
+    padding-top: 0;
+  }
+
+  nav .tech {
+    margin-bottom: 1rem;
+    justify-content: flex-end;
+  }
+
+  nav .tech a {
+    margin-right: 2rem;
+  }
+
+  section {
+    padding: 4rem 0;
+  }
+
+  .hero h1 {
+    font-size: 6.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero p {
+    font-size: 1.85rem;
+  }
+
+  #portfolio h3 + a {
+    margin-top: 0;
+    flex: 1 calc(50% - 1rem);
+  }
+
+  #portfolio .hide {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 784px) {
+  section {
+    padding: 5rem 0;
+  }
+
+  #portfolio h3 {
+    margin-bottom: 4rem;
+  }
+
+  #portfolio h3 + a,
+  #portfolio a {
+    flex: 1 calc(33% - 1rem);
+  }
+}
+
+@media screen and (min-width: 905px) {
+  .hide {
+    display: none;
+  }
+
+  nav img {
+    justify-self: flex-start;
+  }
+
+  .hero {
+    min-height: 60rem;
+    justify-content: space-evenly;
+  }
+
+  .hero > div {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero h1 {
+    font-size: 9rem;
+  }
+
+  .hero h1 span {
+    display: inline;
+  }
+
+  .hero h2 {
+    font-size: 1.7rem;
+    margin-bottom: 4.5rem;
+  }
+
+  .hero p {
+    font-size: 2.4rem;
+    max-width: unset;
+  }
+
+  section {
+    padding: 6rem 0;
+  }
+
+  #portfolio h3 {
+    margin-bottom: 5rem;
+  }
+
+  #portfolio::before {
+    top: -5.3rem;
+    height: 5.7rem;
+  }
+
+  #portfolio::after {
+    bottom: -5.3rem;
+    height: 5.7rem;
+  }
+
+  #portfolio section {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #portfolio h3 + a,
+  #portfolio a:nth-of-type(2) {
+    flex: 1 50%;
+  }
+
+  #portfolio article {
+    padding-top: 24rem;
+  }
+
+  #portfolio article:before {
+    height: 20rem;
+  }
+
+  #portfolio article p {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (min-width: 970px) {
+  h3 {
+    font-size: 3.8rem;
+  }
+
+  h4 {
+    font-size: 2.4rem;
+  }
+
+  #portfolio a:last-child {
+    display: block;
+    flex-basis: 33%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  #portfolio h3 + a {
+    flex: 1 calc(56% - 1rem);
+  }
+
+  #portfolio a:nth-of-type(2) {
+    flex: 1 calc(44% - 1rem);
+  }
+}
+
+@media screen and (min-width: 1640px) {
+  #portfolio::before {
+    top: -7.3rem;
+    height: 7.7rem;
+  }
+
+  #portfolio::after {
+    bottom: -7.3rem;
+    height: 7.7rem;
+  }
+}

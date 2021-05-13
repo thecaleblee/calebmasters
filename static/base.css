@@ -35,6 +35,7 @@ ol {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 900;
+  font-display: swap;
   src: url('../fonts/montserrat-v15-latin-900.eot'); /* IE9 Compat Modes */
   src: local(''),
        url('../fonts/montserrat-v15-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -69,15 +70,18 @@ img {
 
 /* Variables */
 body {
-  --theme-main: #13a895;
-  --text-main: #292f2d;
-  --heading-main: #0f5b46;
+  --main-bg: #fff;
+  --main-theme: #13a895;
+  --main-text: #292f2d;
+  --main-heading: #0f5b46;
   --secondary-bg: #d5ede6;
   --tertiary-bg: #ecf7f2;
-  --text-secondary: #434b49;
-  --text-tertiary: #7a928c;
+  --secondary-text: #434b49;
+  --tertiary-text: #7a928c;
+  --footer-text: #aaacab;
   --top-border-url: url("https://res.cloudinary.com/calebmastersdev/image/upload/v1620834063/cmdev/teal-top_pss4on.svg");
   --bottom-border-url: url("https://res.cloudinary.com/calebmastersdev/image/upload/v1620834064/cmdev/teal-bottom_hora7l.svg");
+  --alt-main-bg: var(--main-text);
 }
 
 /* Styles for layout */
@@ -86,7 +90,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   height: auto;
-  color: var(--text-main);
+  color: var(--main-text);
   background: #fff;
 }
 
@@ -111,7 +115,7 @@ nav ul {
 
 nav .tech {
   font-size: 1rem;
-  color: var(--text-tertiary);
+  color: var(--tertiary-text);
   background: var(--tertiary-bg);
   justify-content: space-evenly;
   padding: 0.3rem 0;
@@ -119,26 +123,26 @@ nav .tech {
 
 nav .tech a,
 nav .tech a:active {
-  color: var(--text-tertiary);
+  color: var(--tertiary-text);
   text-decoration: none;
 }
 
 nav .tech a.active {
-  border-bottom: 1px dotted var(--text-tertiary);
-  color: var(--heading-main);
+  border-bottom: 1px dotted var(--tertiary-text);
+  color: var(--main-heading);
 }
 
 nav ul:first-child a {
   font-family: "Montserrat";
-  color: var(--theme-main);
+  color: var(--main-theme);
 }
 
 nav a.active {
-  color: var(--heading-main);
+  color: var(--main-heading);
 }
 
 nav a:hover {
-  color: var(--text-main);
+  color: var(--main-text);
 }
 
 section {
@@ -146,6 +150,7 @@ section {
 }
 
 footer {
+  color: var(--footer-text);
   flex-grow: 2;
   display: flex;
   flex-direction: column;
@@ -158,39 +163,34 @@ footer p {
 }
 
 /* Typography */
-
 h1 {
-  font-size: 4.5rem;
-}
-
-h2 {
   font-size: 3.5rem;
 }
 
-h3 {
+h2 {
   font-size: 2.8rem;
 }
 
-h4 {
+h3 {
   font-size: 2.2rem;
 }
 
-h5 {
+h4 {
   font-size: 1.7rem;
 }
 
-h3,
-h4 {
+h2,
+h3 {
   font-family: "Montserrat";
-  color: var(--heading-main);
+  color: var(--main-heading);
 }
 
-h5 {
-  color: var(--text-tertiary);
+h4 {
+  color: var(--tertiary-text);
 }
 
-h5 span {
-  color: var(--heading-main);
+h4 span {
+  color: var(--main-heading);
   font-size: 1.5rem;
 }
 
@@ -236,17 +236,17 @@ article + article {
   display: block;
   background: -webkit-linear-gradient(
     45deg,
-    var(--heading-main),
-    var(--theme-main)
+    var(--main-heading),
+    var(--main-theme)
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.hero h2 {
+.hero .h2 {
   font-size: 1.2rem;
   margin-bottom: 2.5rem;
-  color: var(--text-tertiary);
+  color: var(--tertiary-text);
   text-transform: uppercase;
 }
 
@@ -256,20 +256,20 @@ article + article {
 }
 
 /* Portfolio  */
-#portfolio {
+#recent-work {
   background-color: var(--secondary-bg);
   background-image: linear-gradient(
     0deg,
     var(--secondary-bg) 0%,
     var(--secondary-bg) 30%,
-    var(--text-tertiary) 50%,
+    var(--tertiary-text) 50%,
     var(--secondary-bg) 80%,
     var(--secondary-bg) 100%
   );
   position: relative;
 }
 
-#portfolio::before {
+#recent-work::before {
   content: "";
   position: absolute;
   display: block;
@@ -281,7 +281,7 @@ article + article {
   background-size: cover;
 }
 
-#portfolio::after {
+#recent-work::after {
   content: "";
   position: absolute;
   display: block;
@@ -293,28 +293,28 @@ article + article {
   background-size: cover;
 }
 
-#portfolio article {
+#recent-work article {
   padding: 12rem 1rem 1rem;
   margin: 0 1rem 2rem;
   background: #fff;
-  border: 1px solid var(--text-tertiary);
+  border: 1px solid var(--tertiary-text);
   border-radius: 0.3rem;
   position: relative;
   overflow: hidden;
 }
 
-#portfolio h3 {
+#recent-work h2 {
   flex-basis: 100%;
   text-align: center;
 }
 
-#portfolio:first-child a {
+#recent-work:first-child a {
   margin-top: 2rem;
   flex-basis: 100%;
 }
 
-#portfolio article::before {
-  border-bottom: 1px solid var(--text-tertiary);
+#recent-work article::before {
+  border-bottom: 1px solid var(--tertiary-text);
   position: absolute;
   top: 0;
   height: 10rem;
@@ -326,68 +326,68 @@ article + article {
   background-size: cover;
 }
 
-#portfolio article h4 {
-  color: var(--theme-main);
+#recent-work article h3 {
+  color: var(--main-theme);
   margin-bottom: 1rem;
 }
 
-#portfolio article p {
-  color: var(--text-secondary);
+#recent-work article p {
+  color: var(--secondary-text);
   margin-top: 2rem;
   font-size: 1.5rem;
 }
 
-#portfolio a {
+#recent-work a {
   text-decoration: none;
 }
 
-#portfolio a h4 {
+#recent-work a h3 {
   text-decoration: underline;
 }
 
 /* Footer */
 footer {
-  background: var(--text-main);
-  color: var(--text-tertiary);
+  background: var(--main-text);
+  color: var(--tertiary-text);
   margin-top: -2.5rem;
   padding-top: 4.5rem;
 }
 
 @media screen and (min-width: 415px) {
-  #portfolio section {
+  #recent-work section {
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
   }
 
-  #portfolio h3 {
+  #recent-work h2 {
     margin-bottom: 2rem;
   }
 
-  #portfolio h3 + a {
+  #recent-work h2 + a {
     flex-basis: 100%;
   }
 
-  #portfolio article:first-child {
+  #recent-work article:first-child {
     margin-top: 0;
   }
 
-  #portfolio a {
+  #recent-work a {
     flex: 2 1 calc(50% - 2rem);
     display: flex;
   }
 
-  #portfolio a:first-child {
+  #recent-work a:first-child {
     margin-top: 0;
     flex: 1 100%;
   }
 
-  #portfolio a::before {
+  #recent-work a::before {
     height: 12rem;
     background: no-repeat center center var(--background);
   }
 
-  #portfolio article {
+  #recent-work article {
     align-self: stretch;
   }
 }
@@ -415,7 +415,7 @@ footer {
     font-size: 6.5rem;
   }
 
-  .hero h2 {
+  .hero .h2 {
     font-size: 1.4rem;
   }
 
@@ -423,12 +423,12 @@ footer {
     font-size: 1.85rem;
   }
 
-  #portfolio h3 + a {
+  #recent-work h2 + a {
     margin-top: 0;
     flex: 1 calc(50% - 1rem);
   }
 
-  #portfolio .hide {
+  #recent-work .hide {
     display: none;
   }
 }
@@ -438,12 +438,12 @@ footer {
     padding: 5rem 0;
   }
 
-  #portfolio h3 {
+  #recent-work h2 {
     margin-bottom: 4rem;
   }
 
-  #portfolio h3 + a,
-  #portfolio a {
+  #recent-work h2 + a,
+  #recent-work a {
     flex: 1 calc(33% - 1rem);
   }
 }
@@ -476,7 +476,7 @@ footer {
     display: inline;
   }
 
-  .hero h2 {
+  .hero .h2 {
     font-size: 1.7rem;
     margin-bottom: 4.5rem;
   }
@@ -490,75 +490,75 @@ footer {
     padding: 6rem 0;
   }
 
-  #portfolio h3 {
+  #recent-work h2 {
     margin-bottom: 5rem;
   }
 
-  #portfolio::before {
+  #recent-work::before {
     top: -5.3rem;
     height: 5.7rem;
   }
 
-  #portfolio::after {
+  #recent-work::after {
     bottom: -5.3rem;
     height: 5.7rem;
   }
 
-  #portfolio section {
+  #recent-work section {
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  #portfolio h3 + a,
-  #portfolio a:nth-of-type(2) {
+  #recent-work h2 + a,
+  #recent-work a:nth-of-type(2) {
     flex: 1 50%;
   }
 
-  #portfolio article {
+  #recent-work article {
     padding-top: 24rem;
   }
 
-  #portfolio article:before {
+  #recent-work article:before {
     height: 20rem;
   }
 
-  #portfolio article p {
+  #recent-work article p {
     font-size: 1.7rem;
   }
 }
 
 @media screen and (min-width: 970px) {
-  h3 {
+  h2 {
     font-size: 3.8rem;
   }
 
-  h4 {
+  h3 {
     font-size: 2.4rem;
   }
 
-  #portfolio a:last-child {
+  #recent-work a:last-child {
     display: block;
     flex-basis: 33%;
   }
 }
 
 @media screen and (min-width: 1100px) {
-  #portfolio h3 + a {
+  #recent-work h2 + a {
     flex: 1 calc(56% - 1rem);
   }
 
-  #portfolio a:nth-of-type(2) {
+  #recent-work a:nth-of-type(2) {
     flex: 1 calc(44% - 1rem);
   }
 }
 
 @media screen and (min-width: 1640px) {
-  #portfolio::before {
+  #recent-work::before {
     top: -7.3rem;
     height: 7.7rem;
   }
 
-  #portfolio::after {
+  #recent-work::after {
     bottom: -7.3rem;
     height: 7.7rem;
   }

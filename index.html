@@ -4,11 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="noindex, nofollow" />
     <meta
       name="description"
       content="Engineer Portfolio for Caleb Masters. Front-End Engineer, UX promotor, and Hobby Collector"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <meta
+      property="og:title"
+      content="Caleb Masters - Front-End Engineer Portfolio "
+    />
+    <meta
+      property="og:site_name"
+      content="Caleb Masters - Front-End Engineer Portfolio "
+    />
+    <meta property="og:url" content="calebmasters.dev" />
+    <meta
+      property="og:description"
+      content="Engineer Portfolio for Caleb Masters. Front-End Engineer, UX promotor, and Hobby Collector"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/calebmastersdev/image/upload/v1620933744/cmdev/og-cm_ekoqyx.png"
+    />
     <link rel="stylesheet" href="static/base.css" />
     <title>Caleb Masters - Front-End Engineer Portfolio - Home</title>
   </head>
@@ -17,40 +42,53 @@
       <nav role="navigation" aria-label="Main Navigation">
         <ul>
           <li>
-            <a href="/">
+            <a href="/" aria-label="Home">
               <img
                 src="https://res.cloudinary.com/calebmastersdev/image/upload/v1620762551/cmdev/cmlogo-t_aavg64.png"
                 alt="Caleb Masters Dev"
+                width="55"
+                height=30"
               />
             </a>
           </li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#recent-work" aria-label="Recent Work">Recent Work</a></li>
+          <li><a href="#skills" aria-label="Skills">Skills</a></li>
+          <li><a href="#resume" aria-label="Resume">Resume</a></li>
         </ul>
         <ul class="tech">
-          <li><a href="/" class="active">HTML/CSS/JS</a></li>
-          <li><a href="/react">React/Next.js</a></li>
-          <li>???</li>
+          <li><a href="/" class="active" aria-label="Change Website Tech Stack to: HTML/CSS/JS">HTML/CSS/JS</a></li>
+          <li><a href="/react" aria-label="Change Website Tech Stack to: React/Next.js">React/Next.js</a></li>
         </ul>
       </nav>
     </header>
     <main role="main">
       <section class="hero">
         <hgroup>
-          <h2>obligatory portfolio for</h2>
+          <p class="h2">obligatory portfolio for</p>
           <h1><span>Caleb</span> Masters</h1>
         </hgroup>
         <div>
-          <p>Front-End<br class="hide" /> Engineer.</p>
-          <p>UX<br class="hide" /> Promoter.</p>
-          <p>Hobby<br class="hide" /> Collector.</p>
+          <p>
+            Front-End<br class="hide" />
+            Engineer.
+          </p>
+          <p>
+            UX<br class="hide" />
+            Promoter.
+          </p>
+          <p>
+            Hobby<br class="hide" />
+            Collector.
+          </p>
         </div>
       </section>
-      <section id="portfolio">
+      <section id="recent-work">
         <section>
-          <h3>Projects I've<br class="hide" /> Worked On</h3>
-          <a href="/bluehost">
+          <h2>
+            Projects I've<br class="hide" />
+            Worked On Recently
+          </h2>
+          <a href="/bluehost" aria-label="Recent Work Example: Bluehost.com">
             <article
               class="bluehost"
               style="
@@ -59,20 +97,20 @@
               "
             >
               <hgroup>
-                <h4 aria-label="Bluehost.com">Bluehost.com</h4>
-                <h5>
-                  <span>Tech Stack:</span> React, JS, SCSS, Enzyme, Sketch, Invision, Optimizely, Git,
-                  Jira.
-                </h5>
+                <h3 aria-label="Bluehost.com">Bluehost.com</h3>
+                <h4>
+                  <span>Tech Stack:</span> React, JS, SCSS, Enzyme, Sketch,
+                  Invision, Optimizely, Git, Jira.
+                </h4>
               </hgroup>
-              <p role="text">
+              <p>
                 Created React components for an in house framework based on
                 Next.js to allow pages to be generated dynamically using
                 Contentful as a CMS.
               </p>
             </article>
           </a>
-          <a href="/hostgator">
+          <a href="/hostgator" aria-label="Recent Work Example: HostGator.com">
             <article
               class="hostgator"
               style="
@@ -81,11 +119,11 @@
               "
             >
               <hgroup>
-                <h4>HostGator.com</h4>
-                <h5>
-                 <span>Tech Stack:</span>  Mason, Perl, JS, SCSS, Jest, Sketch, Invision, Monetate, Git,
-                  Jira.
-                </h5>
+                <h3>HostGator.com</h3>
+                <h4>
+                  <span>Tech Stack:</span> Mason, Perl, JS, SCSS, Jest, Sketch,
+                  Invision, Monetate, Git, Jira.
+                </h4>
               </hgroup>
               <p>
                 Created custom components and pages in the Perl based platform
@@ -94,11 +132,13 @@
               </p>
             </article>
           </a>
-          <a href="/story-time">
+          <a href="/story-time" aria-label="Recent Work Example: Story Time">
             <article class="bluehost">
               <hgroup>
-                <h4>Bob's StoryTime</h4>
-                <h5><span>Tech Stack:</span> JS, CSS, Express, Heroku, Babel, Git.</h5>
+                <h3>Bob's StoryTime</h3>
+                <h4>
+                  <span>Tech Stack:</span> JS, CSS, Express, Heroku, Babel, Git.
+                </h4>
               </hgroup>
               <p>
                 Created a planning poker app for Agile Scrum use to help with
@@ -106,7 +146,7 @@
               </p>
             </article>
           </a>
-          <a href="/bluehost">
+          <a href="/bluehost" aria-label="Recent Work Example: Bluehost.com">
             <article
               class="bluehost"
               style="
@@ -115,11 +155,11 @@
               "
             >
               <hgroup>
-                <h4>Bluehost.com</h4>
-                <h5>
+                <h3>Bluehost.com</h3>
+                <h4>
                   React, JS, CSS, Enzyme, Sketch, Invision, Optimizely, Git,
                   Jira.
-                </h5>
+                </h4>
               </hgroup>
               <p>
                 Created React components for an in house framework based on
@@ -128,7 +168,7 @@
               </p>
             </article>
           </a>
-          <a href="/hostgator">
+          <a href="/hostgator" aria-label="Recent Work Example: HostGator.com">
             <article
               class="hostgator"
               style="
@@ -137,11 +177,11 @@
               "
             >
               <hgroup>
-                <h4>HostGator.com</h4>
-                <h5>
+                <h3>HostGator.com</h3>
+                <h4>
                   Mason, Perl, JS, CSS, Jest, Sketch, Invision, Monetate, Git,
                   Jira.
-                </h5>
+                </h4>
               </hgroup>
               <p>
                 Created custom components and pages in the Perl based platform
@@ -150,11 +190,11 @@
               </p>
             </article>
           </a>
-          <a href="/story-time">
+          <a href="/story-time" aria-label="Recent Work Example: Story Time">
             <article class="bluehost">
               <hgroup>
-                <h4>Bob's StoryTime</h4>
-                <h5>JS, CSS, Express, Heroku, Babel, Git.</h5>
+                <h3>Bob's StoryTime</h3>
+                <h4>JS, CSS, Express, Heroku, Babel, Git.</h4>
               </hgroup>
               <p>
                 Created a planning poker app for Agile Scrum use to help with

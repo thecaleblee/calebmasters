@@ -165,6 +165,7 @@ footer {
   flex-direction: column;
   justify-content: flex-end;
   padding: 2rem;
+  overflow: hidden;
 }
 
 footer * {
@@ -258,14 +259,13 @@ article + article {
 
 .hero li {
   font-family: "Montserrat";
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   display: block;
 }
 
 /* Recent Work  */
 #recent-work {
   background: var(--main-bg);
-  position: relative;
   z-index: 2;
 }
 
@@ -288,6 +288,7 @@ article + article {
   color:var(--main-text);
   flex-basis: 100%;
   text-align: center;
+  margin-bottom: 2rem;
   position: relative;
 }
 
@@ -336,7 +337,6 @@ article + article {
 
 /* Skills */
 #skills {
-  position: relative;
   background-color: var(--alt-secondary-bg);
   color: var(--alt-secondary-text);
 }
@@ -356,11 +356,10 @@ article + article {
 #resume {
   background-color: var(--tertiary-bg);
   color: var(--main-heading);
-  position: relative;
 }
 
-#resume:before,
-footer:before {
+#resume::before,
+#resume::after {
   background-color: var(--tertiary-bg);
   content: '';
   position: absolute;
@@ -376,6 +375,14 @@ footer:before {
   z-index: 4;
 }
 
+#resume::after {
+  bottom: -2rem;
+  top: unset;
+  background-color: var(--main-footer);
+  transform: skewY(1.5deg);
+  height: 3rem;
+}
+
 #resume h2 {
   color: var(--main-heading);
 }
@@ -385,33 +392,27 @@ footer {
   position: relative;
   background: var(--main-footer);
   color: var(--main-footer-text);
-  padding-top: 4rem;
-}
-
-footer::before {
-  top: -1rem;
-  background-color: var(--main-footer);
-  transform: skewY(1.5deg);
-  z-index: 5;
+  marign-top: 2rem;
+  padding-top: 1rem;
 }
 
 @media screen and (min-width: 415px) {
-  .hero ul {
-    justify-content: center;
-  }
-
-  .hero ul li {
-    padding: 0 1rem;
-  }
-
   .container {
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
   }
 
-  #recent-work h2 {
-    margin-bottom: 2rem;
+  .hero ul {
+    justify-content: center;
+  }
+
+  .hero li {
+    font-size: 1.6rem;
+  }
+
+  .hero ul li {
+    padding: 0 1rem;
   }
 
   #recent-work h2 + a {
@@ -431,12 +432,7 @@ footer::before {
     margin-top: 0;
     flex: 1 100%;
   }
-/* 
-  #recent-work a::before {
-    height: 12rem;
-    background: no-repeat center center var(--background);
-  }
- */
+
   #recent-work article {
     align-self: stretch;
   }
@@ -459,7 +455,7 @@ footer::before {
 
   section,
   footer {
-    padding: 4rem 0;
+    padding: 7rem 0;
     margin-bottom: 0;
   }
 
@@ -483,11 +479,25 @@ footer::before {
   #recent-work .hide {
     display: none;
   }
+
+  #resume {
+    padding-bottom: 10rem;
+  }
+
+  #resume::after {
+    bottom: -2rem;
+    height: 5rem;
+  }
+
+  footer {
+    margin-top: 2rem;
+    padding-top: 4rem;
+  }
 }
 
 @media screen and (min-width: 784px) {
   section {
-    padding: 5rem 0;
+    padding: 8rem 0;
   }
 
   #recent-work h2 {
@@ -507,6 +517,10 @@ footer::before {
 
   nav img {
     justify-self: flex-start;
+  }
+
+  section {
+    padding: 10rem 0;
   }
 
   .hero {
@@ -537,10 +551,6 @@ footer::before {
     max-width: unset;
   }
 
-  section {
-    padding: 8rem 0;
-  }
-
   .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -565,6 +575,10 @@ footer::before {
 
   #recent-work article p {
     font-size: 1.7rem;
+  }
+
+  #resume {
+    padding: 9rem 0 11rem;
   }
 
   footer {
@@ -592,12 +606,20 @@ footer::before {
     font-size: 5rem;
   }
 
+  section {
+    padding: 14rem 0;
+  }
+
   #recent-work h2 + a {
     flex: 1 calc(56% - 1rem);
   }
 
   #recent-work a:nth-of-type(2) {
     flex: 1 calc(44% - 1rem);
+  }
+
+  #resume {
+    padding: 13rem 0 15rem;
   }
 }
 
@@ -606,6 +628,10 @@ footer::before {
     padding: 18rem 0;
   }
   
+  #resume {
+    padding: 17rem 0 19rem;
+  }
+
   footer {
     padding: 8rem 0;
   }

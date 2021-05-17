@@ -1,0 +1,30 @@
+{
+  "name": "calebmasters",
+  "version": "1.0.0",
+  "description": "Obligatory portfolio for Caleb Masters",
+  "main": "index.html",
+  "scripts": {
+    "watch": "sass --style=compressed -w source:static",
+    "dist": "sass --style=compressed source:static",
+    "dev": "concurrently \"npm run watch\" \"serve -s .\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecaleblee/calebmasters.git"
+  },
+  "keywords": [
+    "Developer",
+    "portfolio"
+  ],
+  "author": "Caleb Masters",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thecaleblee/calebmasters/issues"
+  },
+  "homepage": "https://github.com/thecaleblee/calebmasters#readme",
+  "devDependencies": {
+    "concurrently": "^6.1.0",
+    "sass": "^1.32.13",
+    "serve": "^11.3.2"
+  }
+}

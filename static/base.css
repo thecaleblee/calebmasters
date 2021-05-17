@@ -145,7 +145,7 @@ nav ul:first-child a:visited {
 }
 
 nav ul:first-child a.active,
-nav ul:first-child a:hover{ 
+nav ul:first-child a:hover {
   color: var(--main-theme);
   text-decoration: none;
 }
@@ -270,7 +270,7 @@ article + article {
 }
 
 #recent-work:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 1%;
@@ -278,14 +278,18 @@ article + article {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(165deg, var(--main-theme), var(--main-subheading));
+  background-image: linear-gradient(
+    165deg,
+    var(--main-theme),
+    var(--main-subheading)
+  );
   transform: skewY(2deg);
   transform-origin: 0;
   overflow: hidden;
 }
 
 #recent-work h2 {
-  color:var(--main-text);
+  color: var(--main-text);
   flex-basis: 100%;
   text-align: center;
   margin-bottom: 2rem;
@@ -361,7 +365,7 @@ article + article {
 #resume::before,
 #resume::after {
   background-color: var(--tertiary-bg);
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -627,7 +631,7 @@ footer {
   section {
     padding: 18rem 0;
   }
-  
+
   #resume {
     padding: 17rem 0 19rem;
   }

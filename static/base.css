@@ -32,17 +32,21 @@ ol {
 
 /* montserrat-900 - latin */
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url('../fonts/montserrat-v15-latin-900.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('../fonts/montserrat-v15-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/montserrat-v15-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/montserrat-v15-latin-900.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/montserrat-v15-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/montserrat-v15-latin-900.svg#Montserrat') format('svg'); /* Legacy iOS */
+  src: url("../fonts/montserrat-v15-latin-900.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/montserrat-v15-latin-900.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/montserrat-v15-latin-900.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/montserrat-v15-latin-900.woff")
+      format("woff"),
+    /* Modern Browsers */ url("../fonts/montserrat-v15-latin-900.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/montserrat-v15-latin-900.svg#Montserrat") format("svg"); /* Legacy iOS */
 }
 
 body {
@@ -71,17 +75,17 @@ img {
 /* Variables */
 body {
   --main-bg: #fff;
-  --main-theme: #3fa99b;
+  --main-theme: #129fa8;
   --main-heading: #0f5b46;
   --main-subheading: #13a895;
   --main-text: #292f2d;
+  --main-footer: var(--main-text);
+  --main-footer-link: #aaacab;
+  --main-footer-text: var(--alt-secondary-text);
   --secondary-bg: #d5ede6;
-  --tertiary-bg: #ecf7f2;
   --secondary-text: #434b49;
-  --tertiary-text: #7a928c;
-  --footer-text: #aaacab;
-  --top-border-url: url("https://res.cloudinary.com/calebmastersdev/image/upload/v1620834063/cmdev/teal-top_pss4on.svg");
-  --bottom-border-url: url("https://res.cloudinary.com/calebmastersdev/image/upload/v1620834064/cmdev/teal-bottom_hora7l.svg");
+  --tertiary-bg: #ecf7f2;
+  --tertiary-text: #555a59;
   --alt-main-bg: var(--main-text);
   --alt-secondary-bg: #334240;
   --alt-secondary-text: #9fcfc8;
@@ -118,47 +122,54 @@ nav ul {
 
 nav .tech {
   font-size: 1rem;
-  color: var(--tertiary-text);
-  background: var(--tertiary-bg);
+  color: var(--main-footer-link);
+  background: var(--secondary-text);
   justify-content: space-evenly;
   padding: 0.3rem 0;
 }
 
-nav .tech a,
-nav .tech a:active {
-  color: var(--tertiary-text);
+nav .tech a {
+  color: var(--tertiary-bg);
   text-decoration: none;
 }
 
-nav .tech a.active {
-  border-bottom: 1px dotted var(--tertiary-text);
-  color: var(--main-heading);
+nav .tech a.active,
+nav .tech a:hover {
+  border-bottom: 1px dotted var(--main-bg);
 }
 
-nav ul:first-child a {
+nav ul:first-child a,
+nav ul:first-child a:visited {
   font-family: "Montserrat";
-  color: var(--main-theme);
-}
-
-nav a.active {
-  color: var(--main-heading);
-}
-
-nav a:hover {
   color: var(--main-text);
+}
+
+nav ul:first-child a.active,
+nav ul:first-child a:hover{ 
+  color: var(--main-theme);
+  text-decoration: none;
 }
 
 section {
   width: 100%;
 }
 
+.container {
+  position: relative;
+  z-index: 5;
+}
+
 footer {
-  color: var(--footer-text);
   flex-grow: 2;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 2rem;
+}
+
+footer * {
+  position: relative;
+  z-index: 5;
 }
 
 footer p {
@@ -185,7 +196,6 @@ h4 {
 h2,
 h3 {
   font-family: "Montserrat";
-  color: var(--main-heading);
 }
 
 h4 {
@@ -199,12 +209,9 @@ h4 span {
 
 /* Global Styling */
 section {
-  padding: 2rem 1rem;
-  margin: 0 0 2.5rem 0;
-}
-
-section > section {
-  padding: 0;
+  padding: 6rem 1rem;
+  margin: 0;
+  position: relative;
 }
 
 article + article {
@@ -216,12 +223,12 @@ article + article {
   min-height: 30vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   text-align: center;
   letter-spacing: 0.1rem;
 }
 
-.hero > div {
+.hero ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -237,11 +244,7 @@ article + article {
 
 .hero h1 span {
   display: block;
-  background: -webkit-linear-gradient(
-    45deg,
-    var(--main-heading),
-    var(--main-theme)
-  );
+  background-image: linear-gradient(var(--main-theme), var(--main-subheading));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -253,59 +256,44 @@ article + article {
   text-transform: uppercase;
 }
 
-.hero p {
+.hero li {
+  font-family: "Montserrat";
   font-size: 1.6rem;
   display: block;
 }
 
-/* Portfolio  */
+/* Recent Work  */
 #recent-work {
-  background-color: var(--secondary-bg);
-  background-image: linear-gradient(
-    0deg,
-    var(--secondary-bg) 0%,
-    var(--secondary-bg) 30%,
-    var(--tertiary-text) 50%,
-    var(--secondary-bg) 80%,
-    var(--secondary-bg) 100%
-  );
+  background: var(--main-bg);
   position: relative;
-  z-index: 3;
+  z-index: 2;
 }
 
-#recent-work::before,
-footer::before {
-  content: "";
+#recent-work:before {
+  content: '';
   position: absolute;
-  display: block;
-  top: -2.3rem;
-  left: 0;
+  top: 0;
+  bottom: 1%;
   right: 0;
-  height: 2.7rem;
-  background: var(--top-border-url) top center no-repeat;
-  background-size: cover;
-}
-
-#recent-work::after, 
-#skills::after {
-  content: "";
-  position: absolute;
-  display: block;
-  bottom: -2.3rem;
   left: 0;
-  right: 0;
-  height: 2.7rem;
-  background: var(--bottom-border-url) bottom center no-repeat;
-  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(165deg, var(--main-theme), var(--main-subheading));
+  transform: skewY(2deg);
+  transform-origin: 0;
+  overflow: hidden;
 }
 
-#skills::after {
-  filter: brightness(0) saturate(100%) invert(22%) sepia(7%) saturate(911%) hue-rotate(120deg) brightness(93%) contrast(86%);
-  transform: scalex(-1);
+#recent-work h2 {
+  color:var(--main-text);
+  flex-basis: 100%;
+  text-align: center;
+  position: relative;
 }
 
-footer::before {
-  filter: brightness(0) saturate(100%) invert(11%) sepia(3%) saturate(2484%) hue-rotate(109deg) brightness(94%) contrast(81%) ;
+#recent-work:first-child a {
+  margin-top: 2rem;
+  flex-basis: 100%;
 }
 
 #recent-work article {
@@ -316,16 +304,6 @@ footer::before {
   border-radius: 0.3rem;
   position: relative;
   overflow: hidden;
-}
-
-#recent-work h2 {
-  flex-basis: 100%;
-  text-align: center;
-}
-
-#recent-work:first-child a {
-  margin-top: 2rem;
-  flex-basis: 100%;
 }
 
 #recent-work article::before {
@@ -342,7 +320,7 @@ footer::before {
 }
 
 #recent-work article h3 {
-  color: var(--main-theme);
+  color: var(--main-heading);
   margin-bottom: 1rem;
 }
 
@@ -356,18 +334,11 @@ footer::before {
   text-decoration: none;
 }
 
-#recent-work a h3 {
-  text-decoration: underline;
-}
-
 /* Skills */
 #skills {
   position: relative;
-  padding: 5.4rem 0;
-  margin-top: -2.7rem;
   background-color: var(--alt-secondary-bg);
   color: var(--alt-secondary-text);
-  z-index: 2;
 }
 
 #skills .container,
@@ -380,29 +351,59 @@ footer::before {
   color: var(--main-theme);
 }
 
+/* Resume */
+
 #resume {
-  position: relative;
-  padding: 5.4rem 0;
-  margin-top: -2.7rem;
-  background-color: var(--main-bg);
+  background-color: var(--tertiary-bg);
   color: var(--main-heading);
-  z-index: 1;
+  position: relative;
+}
+
+#resume:before,
+footer:before {
+  background-color: var(--tertiary-bg);
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  transform: skewY(-3deg);
+  transform-origin: 0;
+  z-index: 4;
 }
 
 #resume h2 {
-  color: var(--main-subheading);
+  color: var(--main-heading);
 }
 
 /* Footer */
 footer {
   position: relative;
-  background: var(--main-text);
-  color: var(--tertiary-text);
-  padding-top: 2rem;
-  z-index: 1;
+  background: var(--main-footer);
+  color: var(--main-footer-text);
+  padding-top: 4rem;
+}
+
+footer::before {
+  top: -1rem;
+  background-color: var(--main-footer);
+  transform: skewY(1.5deg);
+  z-index: 5;
 }
 
 @media screen and (min-width: 415px) {
+  .hero ul {
+    justify-content: center;
+  }
+
+  .hero ul li {
+    padding: 0 1rem;
+  }
+
   .container {
     display: flex;
     flex-flow: row wrap;
@@ -430,12 +431,12 @@ footer {
     margin-top: 0;
     flex: 1 100%;
   }
-
+/* 
   #recent-work a::before {
     height: 12rem;
     background: no-repeat center center var(--background);
   }
-
+ */
   #recent-work article {
     align-self: stretch;
   }
@@ -456,8 +457,10 @@ footer {
     margin-right: 2rem;
   }
 
-  section {
+  section,
+  footer {
     padding: 4rem 0;
+    margin-bottom: 0;
   }
 
   .hero h1 {
@@ -468,7 +471,7 @@ footer {
     font-size: 1.4rem;
   }
 
-  .hero p {
+  .hero li {
     font-size: 1.85rem;
   }
 
@@ -479,14 +482,6 @@ footer {
 
   #recent-work .hide {
     display: none;
-  }
-
-  #skills {
-    padding: 9rem 0;
-  }
-
-  #resume {
-
   }
 }
 
@@ -503,11 +498,6 @@ footer {
   #recent-work a {
     flex: 1 calc(33% - 1rem);
   }
-
-  #skills {
-    padding: 12rem 0;
-    margin-top: -4rem;
-  }
 }
 
 @media screen and (min-width: 905px) {
@@ -521,10 +511,9 @@ footer {
 
   .hero {
     min-height: 60rem;
-    justify-content: space-evenly;
   }
 
-  .hero > div {
+  .hero ul {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -543,13 +532,13 @@ footer {
     margin-bottom: 4.5rem;
   }
 
-  .hero p {
+  .hero li {
     font-size: 2.4rem;
     max-width: unset;
   }
 
   section {
-    padding: 6rem 0;
+    padding: 8rem 0;
   }
 
   .container {
@@ -559,16 +548,6 @@ footer {
 
   #recent-work h2 {
     margin-bottom: 5rem;
-  }
-
-  #recent-work::before {
-    top: -5.3rem;
-    height: 5.7rem;
-  }
-
-  #recent-work::after {
-    bottom: -5.3rem;
-    height: 5.7rem;
   }
 
   #recent-work h2 + a,
@@ -586,25 +565,6 @@ footer {
 
   #recent-work article p {
     font-size: 1.7rem;
-  }
-
-  #skills {
-    padding: 16.6rem 0 8rem;
-    margin-top: -5.3rem;
-  }
-
-  #skills::after {
-    bottom: -5.3rem;
-    height: 5.7rem;
-  }
-
-  #resume {
-    padding: 16rem 0 8rem;
-  }
-
-  footer::before {
-    top: -5.3rem;
-    height: 5.7rem;
   }
 
   footer {
@@ -628,6 +588,10 @@ footer {
 }
 
 @media screen and (min-width: 1100px) {
+  h2 {
+    font-size: 5rem;
+  }
+
   #recent-work h2 + a {
     flex: 1 calc(56% - 1rem);
   }
@@ -638,35 +602,10 @@ footer {
 }
 
 @media screen and (min-width: 1640px) {
-  #recent-work::before {
-    top: -7.3rem;
-    height: 7.7rem;
+  section {
+    padding: 18rem 0;
   }
-
-  #recent-work::after {
-    bottom: -7.3rem;
-    height: 7.7rem;
-  }
-
-  #skills {
-    padding: 21.4rem 0;
-    margin-top: -7.7rem;
-  }
-
-  #skills::after {
-    bottom: -7.3rem;
-    height: 7.7rem;
-  }
-
-  #resume {
-    padding: 18rem 0 10rem;
-  }
-
-  footer::before {
-    top: -7.3rem;
-    height: 7.7rem;
-  }
-
+  
   footer {
     padding: 8rem 0;
   }

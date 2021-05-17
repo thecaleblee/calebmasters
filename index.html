@@ -55,7 +55,7 @@
           <li><a href="#skills" aria-label="Skills">Skills</a></li>
           <li><a href="#resume" aria-label="Resume">Resume</a></li>
         </ul>
-        <ul class="tech">
+        <ul class="tech" aria-hidden="true">
           <li>
             <a
               href="/"
@@ -80,20 +80,20 @@
           <p class="h2">obligatory portfolio for</p>
           <h1><span>Caleb</span> Masters</h1>
         </hgroup>
-        <div>
-          <p>
+        <ul>
+          <li>
             Front-End<br class="hide" />
             Engineer.
-          </p>
-          <p>
+          </li>
+          <li>
             UX<br class="hide" />
             Promoter.
-          </p>
-          <p>
+          </li>
+          <li>
             Hobby<br class="hide" />
             Collector.
-          </p>
-        </div>
+          </li>
+        </ul>
       </section>
       <section id="recent-work">
         <div class="container">
@@ -170,10 +170,22 @@
       <section id="resume">
         <div class="container">
           <h2>Resume</h2>
-          <p>Relevent work information summed up & a link to get the real thing</p>
+          <p>
+            Relevent work information summed up & a link to get the real thing
+          </p>
         </div>
       </section>
     </main>
-    <footer><p>&copy; Caleb Masters 2021</p></footer>
+    <footer>
+      <p>&copy; Caleb Masters 2021</p>
+    </footer>
   </body>
+  <script>
+    // Fix accessibility for tech stack toggles
+    document.addEventListener("DOMContentLoaded", function () {
+      document
+        .querySelectorAll(".tech a")
+        .forEach((link) => link.setAttribute("tabindex", -1));
+    });
+  </script>
 </html>

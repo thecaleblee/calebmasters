@@ -4,8 +4,8 @@
   "description": "Obligatory portfolio for Caleb Masters",
   "main": "index.html",
   "scripts": {
-    "watch": "sass --style=compressed -w source:static",
-    "dist": "sass --style=compressed source:static",
+    "watch": "sass --no-source-map --style=compressed -w source:static",
+    "dist": "sass --no-source-map --style=compressed source:static",
     "dev": "concurrently \"npm run watch\" \"serve -s .\""
   },
   "repository": {

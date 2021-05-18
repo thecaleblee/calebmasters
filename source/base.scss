@@ -99,7 +99,7 @@ img {
   box-sizing: border-box;
   position: relative;
   display: block;
-  transform: scale(var(--ggs, .7));
+  transform: scale(var(--ggs, 0.7));
   width: 24px;
   height: 18px;
   border: 2px solid;
@@ -132,7 +132,7 @@ img {
   box-sizing: border-box;
   position: relative;
   display: block;
-  transform: scale(var(--ggs, .8));
+  transform: scale(var(--ggs, 0.8));
   width: 22px;
   height: 16px;
   border: 2px solid;
@@ -177,7 +177,7 @@ img {
   box-sizing: border-box;
   position: relative;
   display: block;
-  transform: scale(var(--ggs, .7));
+  transform: scale(var(--ggs, 0.7));
   width: 24px;
   height: 20px;
   border: 2px solid;
@@ -210,6 +210,46 @@ img {
     background: var(--main-text);
     top: 10px;
     left: 11px;
+  }
+}
+
+.gg-link {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  transform: rotate(-45deg) scale(var(--ggs, 1));
+  width: 8px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-left: .5rem;
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    border-radius: 3px;
+    width: 8px;
+    height: 10px;
+    border: 2px solid;
+    top: -4px;
+  }
+
+  &::before {
+    border-right: 0;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    left: -6px;
+  }
+
+  &::after {
+    border-left: 0;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    right: -6px;
   }
 }
 
@@ -260,7 +300,6 @@ nav {
   }
 
   ul:first-child {
-
     i {
       margin-right: 1rem;
     }
@@ -472,6 +511,11 @@ article + article {
       display: block;
       content: "";
       background: no-repeat center center var(--background);
+      background-size: cover;
+    }
+
+    &.this-website::before {
+      background: no-repeat 50% 20% var(--background);
       background-size: cover;
     }
 
@@ -824,7 +868,6 @@ footer {
   h2 {
     font-size: 5rem;
   }
-
 
   #recent-work {
     h2 + a {

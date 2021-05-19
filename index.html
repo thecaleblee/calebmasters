@@ -88,7 +88,7 @@
       </nav>
     </header>
     <main role="main">
-      <section class="hero">
+      <section id="hero">
         <hgroup>
           <p class="h2">obligatory portfolio for</p>
           <h1><span>Caleb</span> Masters</h1>
@@ -206,11 +206,25 @@
             Skills
             <span>Skills, everyone wants em. Skills.</span>
           </h2>
-          <article>
-            <p style="--percent: 100%">HTML/CSS</p>
-            <p style="--percent: 50%">HTML/CSS</p>
-            <p style="--percent: 20%">HTML/CSS</p>
-            <p style="--percent: 0">HTML/CSS</p>
+          <article aria-label="Skill Level">
+            <h3>Front-End</h3>
+            <p style="--percent: 100%; --skill-text: 'React'" aria-label="React 100%">React</p>
+            <p style="--percent: 100%; --skill-text: 'HTML/CSS'" aria-label="HTML/CSS 100%">HTML/CSS</p>
+            <p style="--percent: 90%; --skill-text: 'Javascript'" aria-label="Javascript 90%">Javascript</p>
+            <p style="--percent: 90%; --skill-text: 'Next.js'" aria-label="Next.js 90%">Next.js</p>
+            <p style="--percent: 90%; --skill-text: 'SCSS'" aria-label="SCSS 90%">SCSS</p>
+            <p style="--percent: 90%; --skill-text: 'Unit Testing'" aria-label="Unit Testing 90%">Unit Testing</p>
+            <h3>Efficiencies</h3>
+            <p style="--percent: 100%; --skill-text: 'NPM'" aria-label="NPM 100%">NPM</p>
+            <p style="--percent: 100%; --skill-text: 'VIM/CLI'" aria-label="VIM/CLI 100%">VIM/CLI</p>
+            <p style="--percent: 100%; --skill-text: 'Bitbox'" aria-label="Bitbox 100%">Bitbox</p>
+            <p style="--percent: 100%; --skill-text: 'Git'" aria-label="Git 100%">Git</p>
+            <p style="--percent: 90%; --skill-text: 'Grunt/Gulp'" aria-label="Grunt/Gulp 90%">Grunt/Gulp</p>
+            <h3>Operations</h3>
+            <p style="--percent: 100%; --skill-text: 'Agile'" aria-label="Agile 100%">Agile</p>
+            <p style="--percent: 100%; --skill-text: 'Jira'" aria-label="Jira 100%">Jira</p>
+            <p style="--percent: 80%; --skill-text: 'Deployment'" aria-label="Deployment 80%">Deployment</p>
+            <p style="--percent: 80%; --skill-text: 'A/B Testing'" aria-label="A/B Testing 80%">A/B Testing</p>
           </article>
         </div>
       </section>

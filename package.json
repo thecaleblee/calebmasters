@@ -5,7 +5,9 @@
   "main": "index.html",
   "scripts": {
     "watch": "sass --no-source-map --style=compressed -w source:static",
-    "dist": "sass --no-source-map --style=compressed source:static",
+    "compile" : "sass --no-source-map --style=compressed source:static",
+    "dist": "npm run compile && npm run buildNext",
+    "buildNext": "cd cmnext && npm run build",
     "dev": "concurrently \"npm run watch\" \"serve -s .\""
   },
   "repository": {
@@ -24,6 +26,7 @@
   "homepage": "https://github.com/thecaleblee/calebmasters#readme",
   "devDependencies": {
     "concurrently": "^6.1.0",
+    "create-next-app": "^10.2.1",
     "sass": "^1.32.13",
     "serve": "^11.3.2"
   }

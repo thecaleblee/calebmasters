@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/react/*"
+  to = "https://quirky-dijkstra-f141c7.netlify.app"
+  status = 200
+  force = true

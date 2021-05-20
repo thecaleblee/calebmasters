@@ -1,5 +1,9 @@
 [[redirects]]
   from = "/react/*"
+<<<<<<< Updated upstream
   to = "https://quirky-dijkstra-f141c7.netlify.app"
+=======
+  to = "https://quirky-dijkstra-f141c7.netlify.app/:splat"
+>>>>>>> Stashed changes
   status = 200
   force = true

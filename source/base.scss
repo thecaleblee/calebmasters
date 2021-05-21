@@ -389,6 +389,14 @@ h3 {
   font-family: "Montserrat";
 }
 
+h2 span {
+  font-size: 1.7rem;
+  display: block;
+  text-align: center;
+  font-weight: normal;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 h4 {
   color: var(--tertiary-text);
 
@@ -557,20 +565,12 @@ article + article {
   h2 {
     color: var(--alt-main-theme);
     margin-bottom: 2rem;
-
-    span {
-      font-size: 1.7rem;
-      display: block;
-      text-align: center;
-      font-weight: normal;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
   }
 
   article {
     background-color: var(--main-text);
     border: 1px solid var(--main-heading);
-    border-radius: 4px;
+    border-radius: 0.4rem;
     padding: 2rem;
     display: grid;
     grid-template-columns: 1fr;
@@ -582,7 +582,7 @@ article + article {
     line-height: 1.7;
     position: relative;
     display: block;
-    border-radius: 6px;
+    border-radius: 0.6rem;
     background: var(--secondary-text);
     border: 1px solid var(--tertiary-text);
     text-align: left;
@@ -621,7 +621,39 @@ article + article {
 
   h2 {
     color: var(--main-heading);
+    margin-bottom: 2rem;
+
+    a {
+      background: var(--main-heading);
+      color: var(--main-bg);
+      padding: .5rem 1rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 1.4rem;
+
+      &:hover {
+        background: var(--main-subheading);
+        color: var(--main-bg);
+      }
+    }
   }
+  
+  a {
+    font-family: "Montserrat";
+    color: var(--main-text);
+
+    &:visited {
+      color: var(--main-text);
+    }
+
+    &.active,
+    &:hover {
+      color: var(--main-theme);
+      text-decoration: none;
+    }
+  }
+
+
 
   .container {
     flex-direction: column;
@@ -663,6 +695,73 @@ article + article {
     background-color: var(--main-footer);
     transform: skewY(1.5deg);
     height: 3rem;
+  }
+
+  article {
+    background: var(--main-bg);
+    border: 1px solid var(--tertiary-text);
+    border-radius: 0.3rem;
+    box-shadow: 0 0.8rem 0.8rem rgb(51 66 64 / 40%);
+    display: grid;
+    grid-gap: 4rem;
+    margin: 1rem 1rem 0;
+    padding: 1rem;
+    text-align: left;
+
+    section {
+      padding: 0;
+
+      section, p {
+        padding: 0 2rem;
+      }
+    }
+
+    header {
+      display: grid;
+      grid-template-rows: auto;
+      text-align: center;
+
+      h3 {
+      }
+
+      p {
+
+        + p { 
+
+          + p {
+          }
+        }
+      }
+    }
+
+    section {
+      h4 { 
+        font-weight: bold;
+        margin-top: 1rem;
+
+        span {
+          display: block;
+        }
+      }
+
+      h5 {
+        font-weight: bold;
+      }
+    }
+
+    ul {
+      margin-left: 2rem;
+      font-size: 1.6rem;
+      list-style-type: circle;
+
+      li {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  article + p {
+    margin-top: 4rem;
   }
 }
 
@@ -824,6 +923,12 @@ footer {
       flex: 1 calc(33% - 1rem);
     }
   }
+
+  #resume article section h4 span {
+    width: 20%;
+    float: right;
+    text-align: right;
+  }
 }
 
 @media screen and (min-width: 905px) {
@@ -921,6 +1026,80 @@ footer {
   #recent-work a:last-child {
     display: block;
     flex-basis: 33%;
+  }
+
+  #resume {
+    padding: 4rem;
+
+    article {
+      background: var(--main-bg);
+      border: 1px solid var(--tertiary-text);
+      border-radius: 0.3rem;
+      box-shadow: 0 0.8rem 0.8rem rgb(51 66 64 / 40%);
+      display: grid;
+      grid-gap: 4rem;
+      margin: 1rem 1rem 0;
+      padding: 4rem;
+      text-align: left;
+
+      section {
+        padding: 0;
+        text-align: justify;
+
+        section, p {
+          padding: 0 2rem;
+        }
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+          "t t t t t t"
+          ". m1 m2 m2 m3 .";
+        text-align: center;
+
+        h2 {
+          grid-area: t / span 6;
+        }
+
+        p {
+          grid-area: m1;
+
+          + p { 
+            grid-area: m2 / span 2;
+
+            + p {
+              grid-area: m3;
+            }
+          }
+        }
+      }
+
+      section {
+        h4 { 
+          font-weight: bold;
+          margin-top: 1rem;
+
+          span {
+            width: 20%;
+            float: right;
+            text-align: right;
+          }
+        }
+
+        h5 {
+          font-weight: bold;
+        }
+      }
+
+      ul {
+        margin-left: 2rem;
+        font-size: 1.6rem;
+        list-style-type: circle;
+      }
+    }
   }
 }
 

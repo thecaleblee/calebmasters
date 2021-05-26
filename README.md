@@ -1,5 +1,5 @@
 # calebmasters
-#### Source for calebmasters.com
+#### Source for calebmasters.dev
 
 ### Site Details
 The site is split into two repos & built on two different tech stacks. This portion was built out with just HTML/CSS (later converted to SCSS because the novelty wore off). The other portion is in React/Next.js; it's code can be found [here](https://github.com/thecaleblee/calebmastersnext).

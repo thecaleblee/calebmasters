@@ -224,7 +224,7 @@ img {
   background: currentColor;
   border-radius: 4px;
   vertical-align: middle;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 
   &::after,
   &::before {
@@ -342,7 +342,6 @@ nav {
 
 .container {
   position: relative;
-  z-index: 5;
 }
 
 section {
@@ -394,7 +393,8 @@ h2 span {
   display: block;
   text-align: center;
   font-weight: normal;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 h4 {
@@ -415,6 +415,12 @@ section {
 
 article + article {
   margin-top: 1.5rem;
+}
+
+.top {
+  display: block;
+  margin-top: 2rem;
+  text-align: center;
 }
 
 /* Hero */
@@ -469,39 +475,19 @@ article + article {
   background: var(--main-bg);
   z-index: 2;
 
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 1%;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(
-      165deg,
-      var(--main-theme),
-      var(--main-subheading)
-    );
-    transform: skewY(2deg);
-    transform-origin: 0;
-    overflow: hidden;
-  }
-
   h2 {
     color: var(--main-text);
-    flex-basis: 100%;
     text-align: center;
     margin-bottom: 2rem;
-    position: relative;
-  }
-
-  &:first-child a {
-    margin-top: 2rem;
     flex-basis: 100%;
+
+    + a {
+      flex-basis: 100%;
+    }
   }
 
-  article {
+  a {
+    transition: all 300ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
     padding: 12rem 1rem 1rem;
     margin: 0 1rem 2rem;
     background: var(--main-bg);
@@ -509,6 +495,43 @@ article + article {
     border-radius: 0.3rem;
     position: relative;
     overflow: hidden;
+    text-decoration: none;
+
+    h3 {
+      color: var(--main-heading);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--secondary-text);
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+    
+    &.top {
+      padding: 1rem;
+      margin: 2rem 0 0;
+      background: unset;
+      border: none;
+      flex-basis: 100%;
+      color: var(--main-text);
+      text-decoration: underline;
+
+      &:hover,
+      &:focus,
+      &:active {
+        box-shadow: none;
+        text-decoration: none;
+      }
+
+      &:visited {
+        color: var(--main-text);
+      }
+
+      &:before {
+        display: none;
+      }
+    }
 
     &::before {
       border-bottom: 1px solid var(--tertiary-text);
@@ -534,21 +557,35 @@ article + article {
       box-shadow: 0 0 0.8rem 0 var(--main-heading);
       filter: opacity(90%) saturate(1.2);
     }
-
-    h3 {
-      color: var(--main-heading);
-      margin-bottom: 1rem;
-    }
-
-    p {
-      color: var(--secondary-text);
-      margin-top: 2rem;
-      font-size: 1.5rem;
-    }
   }
 
-  a {
-    text-decoration: none;
+  .container {
+    display: flex;
+    flex: 1 1 100%;
+    flex-flow: row wrap;
+  }
+
+  &:first-child a {
+    margin-top: 2rem;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 1%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      165deg,
+      var(--main-theme),
+      var(--main-subheading)
+    );
+    transform: skewY(2deg);
+    transform-origin: 0;
+    overflow: hidden;
   }
 }
 
@@ -593,7 +630,8 @@ article + article {
     color: transparent;
 
     &::before {
-      background-image: linear-gradient(90deg,
+      background-image: linear-gradient(
+        90deg,
         var(--main-subheading),
         var(--main-theme)
       );
@@ -612,6 +650,22 @@ article + article {
       z-index: -1;
     }
   }
+
+  .top {
+    padding: 1rem;
+    margin: 2rem 0 0;
+    flex-basis: 100%;
+    color: var(--main-bg);
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: var(--main-bg);
+    }
+  }
 }
 
 /* Resume */
@@ -626,7 +680,7 @@ article + article {
     a {
       background: var(--main-heading);
       color: var(--main-bg);
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
       text-transform: uppercase;
       text-decoration: none;
       font-size: 1.4rem;
@@ -637,29 +691,102 @@ article + article {
       }
     }
   }
-  
-  a {
-    font-family: "Montserrat";
-    color: var(--main-text);
 
-    &:visited {
+  section {
+    a {
+      font-family: "Montserrat";
       color: var(--main-text);
-    }
 
-    &.active,
-    &:hover {
-      color: var(--main-theme);
-      text-decoration: none;
+      &:visited {
+        color: var(--main-text);
+      }
+
+      &.active,
+      &:hover {
+        color: var(--main-theme);
+        text-decoration: none;
+      }
     }
   }
-
-
 
   .container {
     flex-direction: column;
     text-align: center;
+    z-index: 5;
   }
 
+  article {
+    background: var(--main-bg);
+    border: 1px solid var(--tertiary-text);
+    border-radius: 0.3rem;
+    box-shadow: 0 0.8rem 0.8rem rgb(51 66 64 / 40%);
+    display: grid;
+    grid-gap: 4rem;
+    margin: 1rem 1rem 0;
+    padding: 1rem;
+    text-align: left;
+
+    section {
+      padding: 0;
+
+      section,
+      p {
+        padding: 0 2rem;
+      }
+    }
+
+    header {
+      display: grid;
+      grid-template-rows: auto;
+      text-align: center;
+    }
+
+    section {
+      h4 {
+        font-weight: bold;
+        margin-top: 1rem;
+
+        span {
+          display: block;
+        }
+      }
+
+      h5 {
+        font-weight: bold;
+      }
+    }
+
+    ul {
+      margin-left: 2rem;
+      font-size: 1.6rem;
+      list-style-type: circle;
+
+      li {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  article + p {
+    margin-top: 4rem;
+  }
+
+  a.top {
+    padding: 1rem;
+    flex-basis: 100%;
+    color: var(--main-text);
+    text-decoration: underline;
+
+    &:hover {
+      box-shadow: none;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: var(--main-text);
+    }
+  }
+  
   &::before {
     background-color: var(--tertiary-bg);
     content: "";
@@ -695,73 +822,6 @@ article + article {
     background-color: var(--main-footer);
     transform: skewY(1.5deg);
     height: 3rem;
-  }
-
-  article {
-    background: var(--main-bg);
-    border: 1px solid var(--tertiary-text);
-    border-radius: 0.3rem;
-    box-shadow: 0 0.8rem 0.8rem rgb(51 66 64 / 40%);
-    display: grid;
-    grid-gap: 4rem;
-    margin: 1rem 1rem 0;
-    padding: 1rem;
-    text-align: left;
-
-    section {
-      padding: 0;
-
-      section, p {
-        padding: 0 2rem;
-      }
-    }
-
-    header {
-      display: grid;
-      grid-template-rows: auto;
-      text-align: center;
-
-      h3 {
-      }
-
-      p {
-
-        + p { 
-
-          + p {
-          }
-        }
-      }
-    }
-
-    section {
-      h4 { 
-        font-weight: bold;
-        margin-top: 1rem;
-
-        span {
-          display: block;
-        }
-      }
-
-      h5 {
-        font-weight: bold;
-      }
-    }
-
-    ul {
-      margin-left: 2rem;
-      font-size: 1.6rem;
-      list-style-type: circle;
-
-      li {
-        margin-bottom: 1rem;
-      }
-    }
-  }
-
-  article + p {
-    margin-top: 4rem;
   }
 }
 
@@ -800,26 +860,18 @@ footer {
   }
 
   #recent-work {
-    h2 + a {
-      flex-basis: 100%;
-    }
-
-    article:first-child {
-      margin-top: 0;
-    }
-
     a {
       flex: 2 1 calc(50% - 2rem);
-      display: flex;
 
-      &:first-child {
-        margin-top: 0;
-        flex: 1 100%;
+      &.top {
+        padding-right: 1.5rem;
       }
     }
+  }
 
-    article {
-      align-self: stretch;
+  #resume {
+    a.top {
+      padding-right: 1.5rem;
     }
   }
 }
@@ -845,6 +897,12 @@ footer {
     margin-bottom: 0;
   }
 
+  .top {
+    text-align: right;
+    font-size: 1.5rem;
+    padding-right: 2rem;
+  }
+
   #hero {
     h1 {
       font-size: 6.5rem;
@@ -860,9 +918,10 @@ footer {
   }
 
   #recent-work {
+    a,
     h2 + a {
       margin-top: 0;
-      flex: 1 calc(50% - 1rem);
+      flex: 1 calc(50% - 2rem);
     }
 
     .hide {
@@ -915,12 +974,17 @@ footer {
       margin-bottom: 4rem;
 
       + a {
-        flex: 1 calc(33% - 1rem);
+        flex: 1 calc(33% - 2rem);
       }
     }
 
     a {
-      flex: 1 calc(33% - 1rem);
+      flex: 1 calc(33% - 2rem);
+      align-items: stretch;
+
+      &:last-child {
+        align-self: flex-end;
+      }
     }
   }
 
@@ -982,17 +1046,9 @@ footer {
   #recent-work {
     h2 {
       margin-bottom: 5rem;
-
-      + a {
-        flex: 1 50%;
-      }
     }
 
-    a:nth-of-type(2) {
-      flex: 1 50%;
-    }
-
-    article {
+    a {
       padding-top: 24rem;
 
       &:before {
@@ -1046,7 +1102,8 @@ footer {
         padding: 0;
         text-align: justify;
 
-        section, p {
+        section,
+        p {
           padding: 0 2rem;
         }
       }
@@ -1055,7 +1112,7 @@ footer {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: auto;
-        grid-template-areas: 
+        grid-template-areas:
           "t t t t t t"
           ". m1 m2 m2 m3 .";
         text-align: center;
@@ -1067,7 +1124,7 @@ footer {
         p {
           grid-area: m1;
 
-          + p { 
+          + p {
             grid-area: m2 / span 2;
 
             + p {
@@ -1078,7 +1135,7 @@ footer {
       }
 
       section {
-        h4 { 
+        h4 {
           font-weight: bold;
           margin-top: 1rem;
 
@@ -1116,16 +1173,6 @@ footer {
 
   h2 {
     font-size: 5rem;
-  }
-
-  #recent-work {
-    h2 + a {
-      flex: 1 calc(56% - 1rem);
-    }
-
-    a:nth-of-type(2) {
-      flex: 1 calc(44% - 1rem);
-    }
   }
 
   #resume {

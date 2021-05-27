@@ -456,18 +456,10 @@
           return;
         }
 
-        // Grab the anchor, find it's target, get the offset, or set it to 0 all else fails
+        // Grab the anchor, find it's target, scroll into view 
         const targetSelector = e.target.hash.split("#")[1];
         const section = document.getElementById(targetSelector);
-        const sectionPosition = section.offsetTop;
-        const scrollPosition = sectionPosition > 0 ? sectionPosition + 50 : 0;
-
-        // Smooth scroll to the target
-        window.scroll({
-          top: scrollPosition,
-          left: 0,
-          behavior: "smooth",
-        });
+        section.scrollIntoView({ behavior: 'smooth' });
       };
 
       // Grab only links so that card links work

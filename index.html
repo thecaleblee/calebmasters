@@ -38,32 +38,45 @@
     <link rel="stylesheet" href="static/base.css" />
     <title>Caleb Masters - Front-End Engineer Portfolio - Home</title>
     <!--[if lt IE 9]>
-    <script>
-      document.createElement("article");
-      document.createElement("aside");
-      document.createElement("footer");
-      document.createElement("header");
-      document.createElement("nav");
-      document.createElement("section");
-      document.createElement("time");
-    </script>
-  <![endif]-->
-  <noscript>
-    <p><strong>This web page requires JavaScript to be enabled.</strong></p>
-    <p>JavaScript is an object-oriented computer programming language
-      commonly used to create interactive effects within web browsers.</p>
-    <p><a href="https://goo.gl/koeeaJ" target="_blank" rel="noopener" title="Link to learn about enabling JavaScript">How to enable JavaScript?</a></p>
-  </noscript>
+      <script>
+        document.createElement("article");
+        document.createElement("aside");
+        document.createElement("footer");
+        document.createElement("header");
+        document.createElement("nav");
+        document.createElement("section");
+        document.createElement("time");
+      </script>
+    <![endif]-->
+    <noscript>
+      <p><strong>This web page requires JavaScript to be enabled.</strong></p>
+      <p>
+        JavaScript is an object-oriented computer programming language commonly
+        used to create interactive effects within web browsers.
+      </p>
+      <p>
+        <a
+          href="https://goo.gl/koeeaJ"
+          target="_blank"
+          rel="noopener"
+          title="Link to learn about enabling JavaScript"
+          >How to enable JavaScript?</a
+        >
+      </p>
+    </noscript>
   </head>
-  <body>
+  <body id="top">
     <header>
       <nav role="navigation" aria-label="Main Navigation">
         <ul>
           <li>
             <a href="/" aria-label="Home">
               <img
-              src="https://res.cloudinary.com/calebmastersdev/image/upload/v1620762551/cmdev/cmlogo-t_aavg64.png"
-              alt="Caleb Masters Dev" width="55" height=30" />
+                src="https://res.cloudinary.com/calebmastersdev/image/upload/v1620762551/cmdev/cmlogo-t_aavg64.png"
+                alt="Caleb Masters Dev"
+                width="55"
+                height="30"
+              />
             </a>
           </li>
           <li>
@@ -131,13 +144,15 @@
             Projects I've<br class="hide" />
             Worked On Recently
           </h2>
-          <a href="/bluehost" aria-label="Recent Work Example: Bluehost.com">
-            <article
-              style="
-                --background: url('https://res.cloudinary.com/calebmastersdev/image/upload/v1620844282/cmdev/bluehost_bc3c2l.jpg');
-                background-size: cover;
-              "
-            >
+          <a
+            href="/bluehost"
+            aria-label="Recent Work Example: Bluehost.com"
+            style="
+              --background: url('https://res.cloudinary.com/calebmastersdev/image/upload/v1620844282/cmdev/bluehost_bc3c2l.jpg');
+              background-size: cover;
+            "
+          >
+            <article>
               <hgroup>
                 <h3 aria-label="Bluehost.com" itemprop="title">Bluehost.com</h3>
                 <h4 itemprop="subheading">
@@ -152,13 +167,15 @@
               </p>
             </article>
           </a>
-          <a href="/hostgator" aria-label="Recent Work Example: HostGator.com">
-            <article
-              style="
-                --background: url('https://res.cloudinary.com/calebmastersdev/image/upload/v1620845531/cmdev/hostgator_vzcs0u.jpg');
-                background-size: cover;
-              "
-            >
+          <a
+            href="/hostgator"
+            aria-label="Recent Work Example: HostGator.com"
+            style="
+              --background: url('https://res.cloudinary.com/calebmastersdev/image/upload/v1620845531/cmdev/hostgator_vzcs0u.jpg');
+              background-size: cover;
+            "
+          >
+            <article>
               <hgroup>
                 <h3 itemprop="title">HostGator.com</h3>
                 <h4 itemprop="subheading">
@@ -173,36 +190,16 @@
               </p>
             </article>
           </a>
-          <!-- <a href="/story-time" aria-label="Recent Work Example: Story Time">
-            <article
-              style="
-                --background: url('https://res.cloudinary.com/calebmastersdev/image/upload/v1620845531/cmdev/hostgator_vzcs0u.jpg');
-                background-size: cover;
-              "
-            >
-              <hgroup>
-                <h3>Bob's StoryTime</h3>
-                <h4>
-                  <span>Tech Stack:</span> JS, CSS, Express, Heroku, Babel, Git.
-                </h4>
-              </hgroup>
-              <p>
-                Created a planning poker app for Agile Scrum use to help with
-                remote employees ability to participate in scrum ceremonies.
-              </p>
-            </article>
-          </a> -->
           <a
             href="https://github.com/thecaleblee/calebmasters"
             aria-label="Recent Work Example: This Website - Github"
+            class="this-website"
+            style="
+              --background: url('https://res.cloudinary.com/calebmastersdev/image/upload/v1621370702/cmdev/calebmastersdev_cjbyeh.jpg');
+              background-size: cover;
+            "
           >
-            <article
-              class="this-website"
-              style="
-                --background: url('https://res.cloudinary.com/calebmastersdev/image/upload/v1621370702/cmdev/calebmastersdev_cjbyeh.jpg');
-                background-size: cover;
-              "
-            >
+            <article>
               <hgroup>
                 <h3 itemprop="title">This Website <i class="gg-link"></i></h3>
                 <h4 itemprop="subheading">
@@ -217,6 +214,7 @@
               </p>
             </article>
           </a>
+          <a class="top" href="#top">Back to Top</a>
         </div>
       </section>
       <section id="skills">
@@ -320,6 +318,7 @@
               A/B Testing
             </p>
           </article>
+          <a class="top" href="#top">Back to Top</a>
         </div>
       </section>
       <section id="resume">
@@ -330,10 +329,14 @@
           </h2>
           <article>
             <header>
-              <h2>Caleb Masters<span><a href="static/cm2021resume.pdf">download resumé pdf</a></span></h2>
-              <p>
-                Contact via Linkedin
-              </p>
+              <h2>
+                Caleb Masters<span
+                  ><a href="static/cm2021resume.pdf"
+                    >download resumé pdf</a
+                  ></span
+                >
+              </h2>
+              <p>Contact via Linkedin</p>
               <p>
                 <a
                   href="https://linkedin.com/in/caleb-masters-atx/"
@@ -344,55 +347,80 @@
                   linkedin.com/in/caleb-masters-atx/
                 </a>
               </p>
-              <p>
-                Austin, TX.
-              </p>
+              <p>Austin, TX.</p>
             </header>
             <section>
               <h3>Summary</h3>
               <p>
-                Frontend engineer with 10+ years experience building pixel-perfect, component based, mobile first, conversion-generating web experiences. Natural propensity toward community building,  curiosity driven technical exploration, and problem solving. Hobby collector.
+                Frontend engineer with 10+ years experience building
+                pixel-perfect, component based, mobile first,
+                conversion-generating web experiences. Natural propensity toward
+                community building, curiosity driven technical exploration, and
+                problem solving. Hobby collector.
               </p>
             </section>
             <section>
               <h3>Experience</h3>
               <section>
                 <hgroup>
-                  <h4>Newfold (Formerly Endurance International Group) - Bluehost, Hostgator, addt'l.<span aria-label="Employed from 2011 - 2021">2011 - 2021</span></h4>
+                  <h4>
+                    Newfold (Formerly Endurance International Group) - Bluehost,
+                    Hostgator, addt'l.<span
+                      aria-label="Employed from 2011 - 2021"
+                      >2011 - 2021</span
+                    >
+                  </h4>
                   <h5>Front-End Engineer (I, II)</h5>
-                  <ul>
-                    <li>
-                      Devleloped scalable &amp; easily maintainable stateless functional components in React utilizing Contentful for content management 
-                    </li>
-                    <li>
-                      Collaborated with design and backend teams to deliver rapid, accessible, semantic, cross-browser compliant, end-user focused, websites in an agile workflow 
-                    </li>
-                    <li>
-                      Worked with sys-ops & backend teams to deploy to AWS mirrors with devleopment, stakeholder, & production builds
-                    </li>
-                    <li>
-                      Ensured the quality of our codebase by establishing best practice coding ownership standards and demonstrating those values when participating in peer-to-peer code reviews, resulting in continuously improving code and value to our stakeholders
-                    </li>
-                    <li>
-                      Encouraged and instructed jr. developers, assisted on-boarding of new hires, and helped instill a culture of open communication and fellowship which helped lower our attrition rate
-                    </li>
-                    <li>
-                      Led the charge to implement Test Driven Development into our development standards. Created unit tests using Enzyme/Jest, Mocha, & React Testing Library ensuring 100% code coverage for every component I built
-                    </li>
-                    <li>
-                      Implemented Monetate & Optimizley/Optimizley Full-stack A/B campaigns for our marketing conversion success testing
-                    </li>
-                  </ul>
                 </hgroup>
+                <ul>
+                  <li>
+                    Devleloped scalable &amp; easily maintainable stateless
+                    functional components in React utilizing Contentful for
+                    content management
+                  </li>
+                  <li>
+                    Collaborated with design and backend teams to deliver rapid,
+                    accessible, semantic, cross-browser compliant, end-user
+                    focused, websites in an agile workflow
+                  </li>
+                  <li>
+                    Worked with sys-ops & backend teams to deploy to AWS mirrors
+                    with devleopment, stakeholder, & production builds
+                  </li>
+                  <li>
+                    Ensured the quality of our codebase by establishing best
+                    practice coding ownership standards and demonstrating those
+                    values when participating in peer-to-peer code reviews,
+                    resulting in continuously improving code and value to our
+                    stakeholders
+                  </li>
+                  <li>
+                    Encouraged and instructed jr. developers, assisted
+                    on-boarding of new hires, and helped instill a culture of
+                    open communication and fellowship which helped lower our
+                    attrition rate
+                  </li>
+                  <li>
+                    Led the charge to implement Test Driven Development into our
+                    development standards. Created unit tests using Enzyme/Jest,
+                    Mocha, & React Testing Library ensuring 100% code coverage
+                    for every component I built
+                  </li>
+                  <li>
+                    Implemented Monetate & Optimizley/Optimizley Full-stack A/B
+                    campaigns for our marketing conversion success testing
+                  </li>
+                </ul>
               </section>
             </section>
           </article>
           <p>Professional and Personal references available upon request</p>
+          <a class="top" href="#top">Back to Top</a>
         </div>
       </section>
     </main>
     <footer>
-      <p>&copy; Caleb Masters 2021</p>
+      <p>&copy; 2021 Caleb Masters</p>
     </footer>
   </body>
   <script>
@@ -401,6 +429,53 @@
       document
         .querySelectorAll(".tech a")
         .forEach((link) => link.setAttribute("tabindex", -1));
+
+      // Smooth scroll
+      function handleScroll(e) {
+        console.log(this, event.target);
+        e.preventDefault();
+
+        // Prvent stopped "/" links
+        if (!e.target.href) {
+          window.location.href = '/';
+          return;
+        }
+
+        // Check for new tab links and allow them through
+        if (e.target.target === '_blank') {
+          window.open(e.target.href, "_blank");
+          return;
+        }
+
+        // Check for external links and allow them through
+        const url = window.location.origin;
+        const newUrl = e.target.href.split(url);
+
+        // Allow Non-Anchor links through 
+        if (newUrl.length === 1 || !e.target.hash) {
+          window.location.href = e.target.href;
+          return;
+        }
+
+        // Grab the anchor, find it's target, get the offset, or set it to 0 all else fails
+        const targetSelector = e.target.hash.split("#")[1];
+        const section = document.getElementById(targetSelector);
+        const sectionPosition = section.offsetTop;
+        const scrollPosition = sectionPosition > 0 ? sectionPosition + 50 : 0;
+
+        // Smooth scroll to the target
+        window.scroll({
+          top: scrollPosition,
+          left: 0,
+          behavior: "smooth",
+        });
+      };
+
+      // Grab only links so that card links work
+      const links = document.querySelectorAll('a');
+
+      // Attach smooth scroll to all links
+      links.forEach(item => item.addEventListener("click", handleScroll, false));
     });
   </script>
 </html>

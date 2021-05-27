@@ -435,8 +435,11 @@
         console.log(this, event.target);
         e.preventDefault();
 
-        // Prvent error w/ "/" links; only works for index
-        if (!e.target.href) return;
+        // Prvent stopped "/" links
+        if (!e.target.href) {
+          window.location.href = '/';
+          return;
+        }
 
         // Check for new tab links and allow them through
         if (e.target.target === '_blank') {
@@ -451,6 +454,7 @@
         // Allow Non-Anchor links through 
         if (newUrl.length === 1 || !e.target.hash) {
           window.location.href = e.target.href;
+          return;
         }
 
         // Grab the anchor, find it's target, get the offset, or set it to 0 all else fails

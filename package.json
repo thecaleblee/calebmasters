@@ -5,8 +5,9 @@
   "main": "index.html",
   "scripts": {
     "watch": "sass --no-source-map --style=compressed -w source:static",
-    "dist": "sass --no-source-map --style=compressed source:static",
-    "dev": "concurrently \"npm run watch\" \"serve -s .\""
+    "compileJS": "uglifyjs -c -m -o static/main.min.js -- source/main.js", 
+    "dist": "sass --no-source-map --style=compressed source:static && uglifyjs -c -m -o static/main.min.js -- source/main.js",
+    "dev": "concurrently \"npm run watch\" \"npm run compileJS\" \"serve -s .\""
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "concurrently": "^6.1.0",
     "sass": "^1.32.13",
-    "serve": "^11.3.2"
+    "serve": "^11.3.2",
+    "uglify-js": "^3.13.8"
   }
 }

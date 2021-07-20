@@ -1,12 +1,12 @@
 {
   "name": "calebmasters",
   "version": "1.0.0",
-  "description": "Obligatory portfolio for Caleb Masters",
+  "description": "Portfolio for Caleb Masters",
   "main": "index.html",
   "scripts": {
     "watch": "sass --no-source-map --style=compressed -w source:static",
     "compileJS": "uglifyjs -c -m -o static/main.min.js -- source/main.js", 
-    "dist": "sass --no-source-map --style=compressed source:static && uglifyjs -c -m -o static/main.min.js -- source/main.js",
+    "dist": "sass --no-source-map --style=compressed source:static && uglifyjs -c -m -o static/main.min.js -- source/main.js && cp source/cmasters-2021-resume-webv1.pdf static/",
     "dev": "concurrently \"npm run watch\" \"npm run compileJS\" \"serve -s .\""
   },
   "repository": {

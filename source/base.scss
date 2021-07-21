@@ -683,7 +683,7 @@ article + article {
       padding: 0.5rem 1rem;
       text-transform: uppercase;
       text-decoration: none;
-      font-size: 1.4rem;
+      font-size: 3rem;
 
       &:hover {
         background: var(--main-subheading);
@@ -1087,6 +1087,10 @@ footer {
   #resume {
     padding: 4rem;
 
+    h2 a {
+      font-size: 3.4rem;
+    }
+
     article {
       background: var(--main-bg);
       border: 1px solid var(--tertiary-text);
@@ -1193,6 +1197,10 @@ footer {
 
   #resume {
     padding: 17rem 0 19rem;
+
+    h2 a {
+      font-size: 4rem;
+    }
   }
 
   footer {

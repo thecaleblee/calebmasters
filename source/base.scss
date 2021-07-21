@@ -878,8 +878,14 @@ footer {
 
 @media screen and (min-width: 567px) {
   nav {
+    background: var(--main-bg);
+    box-shadow: 0 0 3px rgb(0 0 0 / 30%);
     flex-direction: column-reverse;
     padding-top: 0;
+    padding-bottom: .5rem;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
 
     .tech {
       margin-bottom: 1rem;

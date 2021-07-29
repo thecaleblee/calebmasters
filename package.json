@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "sass --no-source-map --style=compressed -w source:static",
     "compileJS": "uglifyjs -c -m -o static/main.min.js -- source/main.js", 
-    "dist": "sass --no-source-map --style=compressed source:static && uglifyjs -c -m -o static/main.min.js -- source/main.js && cp source/cmasters-2021-resume-web.pdf static/",
+    "dist": "sass --no-source-map --style=compressed source:static && uglifyjs -c -m -o static/main.min.js -- source/main.js && cp source/cmasters-2021-resume-one-page.pdf static/ && cp source/cmasters-2021-resume-long.pdf static/",
     "dev": "concurrently \"npm run watch\" \"npm run compileJS\" \"serve -s .\""
   },
   "repository": {
